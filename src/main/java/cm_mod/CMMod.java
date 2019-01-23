@@ -73,5 +73,6 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber {
 	@Override
 	public void receiveEditCards() {
 		BaseMod.addCard(new Strike());
+		BaseMod.addCard(new Defend());
 	}
 }

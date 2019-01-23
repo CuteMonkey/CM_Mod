@@ -6,17 +6,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 
 import basemod.helpers.BaseModCardTags;
 
 import cm_mod.patches.AddCardColor;
 import basemod.abstracts.CustomCard;
 
-public class Strike extends CustomCard {
-	public static final String ID = "CM_Strike";
+public class Defend extends CustomCard {
+	public static final String ID = "MC_Defend";
 	
 	private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
@@ -24,32 +22,30 @@ public class Strike extends CustomCard {
 	public static final String IMG_PATH = null;
 	
 	private static final int COST = 1;
-	private static final int ATTACT_DMG = 6;
-	private static final int UPGRADE_PLUS_DMG = 3;
+	private static final int BLOCK_AMT = 5;
+	private static final int UPGRADE_PLUS_BLOCK = 3;
 	
-	public Strike() {
-		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AddCardColor.BANANA_COLOR,
-			AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
-		this.baseDamage = ATTACT_DMG;
-		tags.add(AbstractCard.CardTags.STRIKE);
-		tags.add(BaseModCardTags.BASIC_STRIKE);
+	public Defend() {
+		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL, AddCardColor.BANANA_COLOR,
+			AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
+		this.tags.add(BaseModCardTags.BASIC_DEFEND);
+		this.baseBlock = BLOCK_AMT;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage,
-			this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 	}
 	
 	@Override
 	public AbstractCard makeCopy() {
-		return new Strike();
+		return new Defend();
 	}
 	
 	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
-			upgradeDamage(UPGRADE_PLUS_DMG);
+			upgradeBlock(UPGRADE_PLUS_BLOCK);
 		}
 	}
 }

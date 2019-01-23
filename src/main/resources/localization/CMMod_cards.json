@@ -2,5 +2,9 @@
 	"CM_Strike": {
 		"NAME": "打擊",
 		"DESCRIPTION": "造成 !D! 點傷害"
+	},
+	"CM_Defend": {
+		"NAME": "防禦",
+		"DESCRIPTION": "獲得 !B! 點防禦"
 	}
 }
