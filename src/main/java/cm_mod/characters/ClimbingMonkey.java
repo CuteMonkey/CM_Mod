@@ -17,15 +17,17 @@ import cm_mod.patches.AddPlayerClass;
 import cm_mod.patches.AddCardColor;
 import cm_mod.CMMod;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpriterAnimation;
 
 public class ClimbingMonkey extends CustomPlayer {
 	private static final int ENERGY_PRE_TURN = 3;
-	private static final String CM_SHOULDER_1 = null;
-	private static final String CM_SHOULDER_2 = null;
-	private static final String CM_CORPSE = null;
+	private static final String CM_SHOULDER_1 = "img/char/CM/shoulder1.png";
+	private static final String CM_SHOULDER_2 = "img/char/CM/shoulder2.png";
+	private static final String CM_CORPSE = "img/char/CM/fallen.png";
+	private static final String CM_ANIMATION = "img/char/CM/animation/cm_animation.scml";
 	
 	public ClimbingMonkey(String name) {
-		super(name, AddPlayerClass.CLIMBING_MONKEY, null, null);
+		super(name, AddPlayerClass.CLIMBING_MONKEY, null, new SpriterAnimation(CM_ANIMATION));
 		
 		initializeClass(null, CM_SHOULDER_2, CM_SHOULDER_1, CM_CORPSE, getLoadout(),
 			20.0f, -10.0f, 220.0f, 290.0f, new EnergyManager(ENERGY_PRE_TURN));

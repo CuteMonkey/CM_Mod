@@ -44,8 +44,8 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	
 	public static final Color BANANA_YELLOW = CardHelper.getColor(249f, 249f, 6f);
 	
-	private static final String CM_BUTTON = null;
-	private static final String CM_PORTRAIT = null;
+	private static final String CM_BUTTON = "img/charSelect/CM_button.png";
+	private static final String CM_PORTRAIT = "img/charSelect/CM_portrait.jpg";
 	
 	private static final String ENG_STRINGS = "localization/eng/";
 	private static final String ZHT_STRINGS = "localization/zht/";
