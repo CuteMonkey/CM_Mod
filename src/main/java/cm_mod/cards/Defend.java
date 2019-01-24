@@ -14,7 +14,7 @@ import cm_mod.patches.AddCardColor;
 import basemod.abstracts.CustomCard;
 
 public class Defend extends CustomCard {
-	public static final String ID = "MC_Defend";
+	public static final String ID = "CM_Defend";
 	
 	private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;

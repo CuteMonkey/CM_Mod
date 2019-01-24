@@ -1,0 +1,10 @@
+{
+	"CM_Strike": {
+		"NAME": "Strike",
+		"DESCRIPTION": "Deal !D! damage."
+	},
+	"CM_Defend": {
+		"NAME": "Defend",
+		"DESCRIPTION": "Gain !B! Block."
+	}
+}

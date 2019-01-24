@@ -1,0 +1,9 @@
+{
+	"CM_BananaExtractor": {
+		"NAME": "Banana Extractor",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"Every you play 4 cards, gain 1 Banana essence."
+		]
+	}
+}
