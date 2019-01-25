@@ -4,22 +4,32 @@ import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.EnergyManager;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import cm_mod.cards.Strike;
 import cm_mod.patches.AddPlayerClass;
 import cm_mod.patches.AddCardColor;
 import cm_mod.CMMod;
+
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 
 public class ClimbingMonkey extends CustomPlayer {
+	public static final Logger logger = LogManager.getLogger(CMMod.class.getName());
+	
 	private static final int ENERGY_PRE_TURN = 3;
 	private static final String CM_SHOULDER_1 = "img/char/CM/shoulder1.png";
 	private static final String CM_SHOULDER_2 = "img/char/CM/shoulder2.png";
@@ -27,10 +37,13 @@ public class ClimbingMonkey extends CustomPlayer {
 	private static final String CM_ANIMATION = "img/char/CM/animation/cm_animation.scml";
 	
 	public ClimbingMonkey(String name) {
+		//Remember to add energy orb layers.
 		super(name, AddPlayerClass.CLIMBING_MONKEY, null, new SpriterAnimation(CM_ANIMATION));
 		
+		logger.info("Start to initialize Climbing Monkey.");
 		initializeClass(null, CM_SHOULDER_2, CM_SHOULDER_1, CM_CORPSE, getLoadout(),
 			20.0f, -10.0f, 220.0f, 290.0f, new EnergyManager(ENERGY_PRE_TURN));
+		logger.info("Initialize Climbing Monkey complete.");
 	}
 	
 	public ArrayList<String> getStartingDeck() {
@@ -84,7 +97,7 @@ public class ClimbingMonkey extends CustomPlayer {
 		if(Settings.language == Settings.GameLanguage.ENG) {
 			retVal = "Climbing Monkey";
 		} else {
-			retVal = "\u722c\u5c0f\u7334\u5854";
+			retVal = "\u722c\u5854\u5c0f\u7334";
 		}
 		
 		return retVal;
@@ -97,6 +110,8 @@ public class ClimbingMonkey extends CustomPlayer {
 	}
 	
 	public CharSelectInfo getLoadout() {
+		logger.info("Start to get loadout.");
+		
 		return new CharSelectInfo(cmTitle, cmFlavor, STARTING_HP, MAX_HP, 0, STARTING_GOLD, HAND_SIZE,
 			this, getStartingRelics(), getStartingDeck(), false);
 	}
@@ -113,8 +128,11 @@ public class ClimbingMonkey extends CustomPlayer {
 		return CMMod.BANANA_YELLOW;
 	}
 	
+	//I do not know what this for.
 	public AbstractCard getStartCardForEvent() {
-		return null;
+		logger.info("Start to get start card for event.");
+		
+		return new Strike();
 	}
 	
 	public Color getCardTrailColor() {
@@ -129,12 +147,20 @@ public class ClimbingMonkey extends CustomPlayer {
 		return FontHelper.energyNumFontRed;
 	}
 	
+	//Copy from Ironclad
 	public void doCharSelectScreenSelectEffect() {
-		//TO DO
+		logger.info("Start to do character select screen select effect.");
+		
+		CardCrawlGame.sound.playA("ATTACK_HEAVY", MathUtils.random(-0.2f, 0.2f));
+		CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
+		
+		logger.info("Do character select screen select effect complete.");
 	}
 	
 	public String getCustomModeCharacterButtonSoundKey() {
-		return "SELECT_CM";
+		logger.info("Start to get custom mode character button sound key.");
+		
+		return "ATTACK_HEAVY";
 	}
 	
 	public String getLocalizedCharacterName() {

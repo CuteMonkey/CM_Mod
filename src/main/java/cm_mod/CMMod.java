@@ -12,8 +12,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditStringsSubscriber;
@@ -30,6 +33,8 @@ import cm_mod.characters.ClimbingMonkey;
 @SpireInitializer
 public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	EditRelicsSubscriber, EditCharactersSubscriber {
+	public static final Logger logger = LogManager.getLogger(CMMod.class.getName());
+	
 	private static final String ATTACK_CC = "img/512/bg_attack_CM_s.png";
 	private static final String POWER_CC = "img/512/bg_power_CM_s.png";
 	private static final String SKILL_CC = "img/512/bg_skill_CM_s.png";
@@ -57,6 +62,7 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	public CMMod() {
 		BaseMod.subscribe(this);
 		
+		logger.info("Start to create BANANA_COLOR.");
 		BaseMod.addColor(
 			BANANA_COLOR,
 			BANANA_YELLOW,
@@ -67,15 +73,16 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 			BANANA_YELLOW,
 			BANANA_YELLOW,
 			ATTACK_CC,
-			POWER_CC,
 			SKILL_CC,
+			POWER_CC,
 			ENERGY_ORB_CC,
 			ATTACK_CC_PORTRAIT,
-			POWER_CC_PORTRAIT,
 			SKILL_CC_PORTRAIT,
+			POWER_CC_PORTRAIT,
 			ENERGY_ORB_CC_PORTRAIT,
 			CARD_ENERGY_ORB
 		);
+		logger.info("Create BANANA_COLOR complete.");
 	}
 	
 	public static void initialize() {
@@ -84,12 +91,14 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	
 	@Override
 	public void receiveEditCharacters() {
+		logger.info("Start to create Climbing Monkey.");
 		BaseMod.addCharacter(
 			new ClimbingMonkey(CardCrawlGame.playerName),
 			CM_BUTTON,
 			CM_PORTRAIT,
 			CLIMBING_MONKEY
 		);
+		logger.info("Create Climbing Monkey complete.");
 	}
 	
 	@Override
@@ -107,22 +116,33 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 			relic = ZHT_STRINGS + RELIC_STRINGS;
 		}
 		
+		
+		logger.info("Start to load custom strings.");
 		cardStrings = Gdx.files.internal(card).readString(String.valueOf(StandardCharsets.UTF_8));
 		BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 		powerStrings = Gdx.files.internal(power).readString(String.valueOf(StandardCharsets.UTF_8));
 		BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
 		relicStrings = Gdx.files.internal(relic).readString(String.valueOf(StandardCharsets.UTF_8));
 		BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+		logger.info("Load custom strings complete.");
 	}
 	
 	@Override
 	public void receiveEditCards() {
+		logger.info("Start to create cards.");
+		
 		BaseMod.addCard(new Strike());
 		BaseMod.addCard(new Defend());
+		
+		logger.info("Create cards complete.");
 	}
 	
 	@Override
 	public void receiveEditRelics() {
+		logger.info("Start to create relics.");
+		
 		BaseMod.addRelicToCustomPool(new BananaExtractor(), BANANA_COLOR);
+		
+		logger.info("Create relics complete.");
 	}
 }

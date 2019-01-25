@@ -19,7 +19,7 @@ public class Defend extends CustomCard {
 	private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String IMG_PATH = null;
+	public static final String IMG_PATH = "img/cards/defend.png";
 	
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 5;

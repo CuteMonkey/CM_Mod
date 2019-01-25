@@ -1,0 +1,14 @@
+{
+	"modid": "cm_mod",
+	"name": "Climbling Monkey Mod",
+	"author_list": [
+		"CuteMonkey"
+	],
+	"description": "Mod for the new character Climbing Monkey.",
+	"version": "0.1.0",
+	"sts_version": "01-10-2019",
+	"mts_version": "3.6.0",
+	"depandencies": [
+		"basemod"
+	]
+}

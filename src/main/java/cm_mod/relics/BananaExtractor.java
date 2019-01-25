@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import cm_mod.powers.BananaEssence;
 
@@ -12,12 +13,17 @@ import basemod.abstracts.CustomRelic;
 
 public class BananaExtractor extends CustomRelic {
 	public static final String ID = "CM_BananaExtractor";
-	public static final String IMG = null;
+	public static final String IMG = "img/relics/banana_extractor.png";
 	
 	private static final int THRESHOLD = 4;
 	
 	public BananaExtractor() {
-		super(ID, IMG, AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.MAGICAL);
+		super(ID, ImageMaster.loadImage(IMG), AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.MAGICAL);
+	}
+	
+	@Override
+	public String getUpdatedDescription() {
+		return DESCRIPTIONS[0] + THRESHOLD + DESCRIPTIONS[1];
 	}
 	
 	@Override

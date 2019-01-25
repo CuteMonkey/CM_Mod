@@ -9,10 +9,16 @@
                 <key id="0">
                     <object_ref id="0" timeline="0" key="0" z_index="0"/>
                 </key>
+                <key id="1" time="500">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
             </mainline>
             <timeline id="0" name="climbing_monkey">
                 <key id="0" spin="0">
-                    <object folder="0" file="0" x="-269" y="369"/>
+                    <object folder="0" file="0" x="-267" y="208"/>
+                </key>
+                <key id="1" time="500" spin="0">
+                    <object folder="0" file="0" x="-277" y="208"/>
                 </key>
             </timeline>
         </animation>
