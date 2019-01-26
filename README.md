@@ -1,12 +1,15 @@
-#爬塔小猴MOD
+# 爬塔小猴MOD
 ------------
-##簡介
+## 簡介
+
 這是一個遊戲「Slay the Spire」的角色模組，目前含有：
 * 新角色「爬塔小猴」
 * 2張基本卡
 * 1個初始遺物
 
-##相依資源
+
+## 相依資源
+
 打包本MOD時請先準備以下.jar檔：
 1. [ModTheSpire.jar](https://github.com/kiooeht/ModTheSpire)
 2. [BaseMod.jar](https://github.com/daviscook477/BaseMod)
@@ -14,7 +17,9 @@
 
 前二項也可以直接在Steam Workshop上取得。
 
-##模組打包
+
+## 模組打包
+
 本MOD使用maven打包成.jar檔，你也可以使用其他工具。
 
 若要使用maven，直接在模組根目錄底下執行`mvn package`。
@@ -37,5 +42,6 @@
 			tofile="D:/Steam/steamapps/common/SlayTheSpire/mods/CMMod.jar"/>
     </target>
 
-##模組使用
+## 模組使用
+
 請參照ModTheSpire的說明。
