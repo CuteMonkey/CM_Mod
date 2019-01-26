@@ -15,7 +15,7 @@ public class BananaExtractor extends CustomRelic {
 	public static final String ID = "CM_BananaExtractor";
 	public static final String IMG = "img/relics/banana_extractor.png";
 	
-	private static final int THRESHOLD = 4;
+	private static final int THRESHOLD = 3;
 	
 	public BananaExtractor() {
 		super(ID, ImageMaster.loadImage(IMG), AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.MAGICAL);
@@ -31,7 +31,7 @@ public class BananaExtractor extends CustomRelic {
 		this.counter++;
 		if(this.counter == THRESHOLD) {
 			AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
-				AbstractDungeon.player, new BananaEssence(AbstractDungeon.player, 1), 1));
+				AbstractDungeon.player, new BananaEssence(AbstractDungeon.player, 1), 1, true));
 			this.counter = 0;
 		}
 	}
@@ -41,7 +41,6 @@ public class BananaExtractor extends CustomRelic {
 		this.counter = 0;
 	}
 	
-	@Override
 	public AbstractRelic makeCopy() {
 		return new BananaExtractor();
 	}

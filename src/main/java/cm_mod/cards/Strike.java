@@ -40,12 +40,10 @@ public class Strike extends CustomCard {
 			this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 	}
 	
-	@Override
 	public AbstractCard makeCopy() {
 		return new Strike();
 	}
 	
-	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();

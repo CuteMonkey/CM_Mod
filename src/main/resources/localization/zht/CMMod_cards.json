@@ -5,6 +5,10 @@
 	},
 	"CM_Defend": {
 		"NAME": "防禦",
-		"DESCRIPTION": "獲得 !B! 點防禦"
+		"DESCRIPTION": "獲得 !B! 點 格擋"
+	},
+	"CM_Uppercut": {
+		"NAME": "上鉤拳",
+		"DESCRIPTION": "造成 !D! 點傷害並給予 !M! 層 虛弱 。 NL 蕉爆 (1): 給予 !M! 層 虛弱"
 	}
 }

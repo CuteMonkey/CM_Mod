@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import cm_mod.cards.Strike;
+import cm_mod.cards.Uppercut;
 import cm_mod.patches.AddPlayerClass;
 import cm_mod.patches.AddCardColor;
 import cm_mod.CMMod;
@@ -73,6 +73,7 @@ public class ClimbingMonkey extends CustomPlayer {
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
+		retVal.add("CM_Uppercut");
 		return retVal;
 	}
 	
@@ -116,7 +117,7 @@ public class ClimbingMonkey extends CustomPlayer {
 		if(Settings.language == Settings.GameLanguage.ENG) {
 			retVal = "Climbing Monkey";
 		} else {
-			retVal = "\u722c\u5854\u5c0f\u7334";
+			retVal = "ª¦¶ð¤pµU";
 		}
 		
 		return retVal;
@@ -151,7 +152,7 @@ public class ClimbingMonkey extends CustomPlayer {
 	public AbstractCard getStartCardForEvent() {
 		logger.info("Start to get start card for event.");
 		
-		return new Strike();
+		return new Uppercut();
 	}
 	
 	public Color getCardTrailColor() {

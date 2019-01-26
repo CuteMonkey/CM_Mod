@@ -5,12 +5,14 @@ import static cm_mod.patches.AddPlayerClass.CLIMBING_MONKEY;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.Gdx;
+import com.google.gson.Gson;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -23,6 +25,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
 
 import java.nio.charset.StandardCharsets;
 
@@ -32,7 +35,7 @@ import cm_mod.characters.ClimbingMonkey;
 
 @SpireInitializer
 public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
-	EditRelicsSubscriber, EditCharactersSubscriber {
+	EditRelicsSubscriber, EditCharactersSubscriber, EditKeywordsSubscriber {
 	public static final Logger logger = LogManager.getLogger(CMMod.class.getName());
 	
 	private static final String ATTACK_CC = "img/512/bg_attack_CM_s.png";
@@ -58,6 +61,7 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	private static final String CARD_STRINGS = "CMMod_cards.json";
 	private static final String POWER_STRINGS = "CMMod_powers.json";
 	private static final String RELIC_STRINGS = "CMMod_relics.json";
+	private static final String KEYWORD_STRINGS = "CMMod_keywords.json";
 	
 	public CMMod() {
 		BaseMod.subscribe(this);
@@ -87,6 +91,10 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	
 	public static void initialize() {
 		new CMMod();
+	}
+	
+	private static String loadJson(String jsonPath) {
+		return Gdx.files.internal(jsonPath).readString(String.valueOf(StandardCharsets.UTF_8));
 	}
 	
 	@Override
@@ -128,11 +136,35 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	}
 	
 	@Override
+	public void receiveEditKeywords() {
+		logger.info("Start to load custom keywords.");
+		
+		String keywordsPath;
+		
+		if(Settings.language == Settings.GameLanguage.ENG) {
+			keywordsPath = ENG_STRINGS + KEYWORD_STRINGS;
+		} else {
+			keywordsPath = ZHT_STRINGS + KEYWORD_STRINGS;
+		}
+		
+		Gson gson = new Gson();
+		Keywords keywords = gson.fromJson(loadJson(keywordsPath), Keywords.class);
+		for(Keyword key : keywords.keywords) {
+			BaseMod.addKeyword(key.NAMES, key.DESCRIPTION);
+		}
+		
+		logger.info("Load custom keywords complete.");
+	}
+	
+	@Override
 	public void receiveEditCards() {
 		logger.info("Start to create cards.");
 		
+		//Basic cards
 		BaseMod.addCard(new Strike());
 		BaseMod.addCard(new Defend());
+		//Common cards
+		BaseMod.addCard(new Uppercut());
 		
 		logger.info("Create cards complete.");
 	}
@@ -144,5 +176,9 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		BaseMod.addRelicToCustomPool(new BananaExtractor(), BANANA_COLOR);
 		
 		logger.info("Create relics complete.");
+	}
+	
+	class Keywords {
+		Keyword[] keywords;
 	}
 }

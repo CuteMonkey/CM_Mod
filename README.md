@@ -4,8 +4,8 @@
 
 這是一個遊戲「Slay the Spire」的角色模組，目前含有：
 * 新角色「爬塔小猴」
-* 2張基本卡
-* 1個初始遺物
+* 3張專屬卡牌
+* 1個專屬遺物
 
 
 ## 相依資源
@@ -20,7 +20,7 @@
 
 ## 模組打包
 
-本MOD使用maven打包成.jar檔，你也可以使用其他工具。
+本MOD使用[maven](https://maven.apache.org/index.html)打包成.jar檔，你也可以使用其他工具。
 
 若要使用maven，直接在模組根目錄底下執行`mvn package`。
 

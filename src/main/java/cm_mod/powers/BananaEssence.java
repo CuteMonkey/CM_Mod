@@ -21,4 +21,9 @@ public class BananaEssence extends AbstractPower {
 		this.amount = amount;
 		this.img = new Texture(IMG);
 	}
+	
+	@Override
+	public void atEndOfRound() {
+		this.amount = 0;
+	}
 }

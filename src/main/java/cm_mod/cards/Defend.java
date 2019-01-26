@@ -36,12 +36,10 @@ public class Defend extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 	}
 	
-	@Override
 	public AbstractCard makeCopy() {
 		return new Defend();
 	}
 	
-	@Override
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
