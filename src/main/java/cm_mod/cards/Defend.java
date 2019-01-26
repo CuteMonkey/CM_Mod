@@ -16,7 +16,7 @@ import basemod.abstracts.CustomCard;
 public class Defend extends CustomCard {
 	public static final String ID = "CM_Defend";
 	
-	private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/defend.png";

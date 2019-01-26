@@ -34,11 +34,26 @@ public class ClimbingMonkey extends CustomPlayer {
 	private static final String CM_SHOULDER_1 = "img/char/CM/shoulder1.png";
 	private static final String CM_SHOULDER_2 = "img/char/CM/shoulder2.png";
 	private static final String CM_CORPSE = "img/char/CM/fallen.png";
-	private static final String CM_ANIMATION = "img/char/CM/animation/cm_animation.scml";
+	private static final String CM_ANIMATION = "img/char/CM/animation/cm_movement.scml";
+	
+	private static final String[] ORB_TEXTURES = {
+		"img/UI/EPanel/layer4.png",
+		"img/UI/EPanel/layer3.png",
+		"img/UI/EPanel/layer2.png",
+		"img/UI/EPanel/layer1.png",
+		"img/UI/EPanel/layer0.png",
+		"img/UI/EPanel/layer4d.png",
+		"img/UI/EPanel/layer3d.png",
+		"img/UI/EPanel/layer2d.png",
+		"img/UI/EPanel/layer1d.png"
+	};
+	private static final String ORB_VFX = "img/UI/energy_yellow_VFX.png";
+	private static final float[] LAYER_SPEED = {
+		-30.0f, 20.0f, -10.0f, 0.0f, -10.0f, 8.0f, -5.0f, 0.0f};
 	
 	public ClimbingMonkey(String name) {
-		//Remember to add energy orb layers.
-		super(name, AddPlayerClass.CLIMBING_MONKEY, null, new SpriterAnimation(CM_ANIMATION));
+		super(name, AddPlayerClass.CLIMBING_MONKEY, ORB_TEXTURES, ORB_VFX, LAYER_SPEED,
+			new SpriterAnimation(CM_ANIMATION));
 		
 		logger.info("Start to initialize Climbing Monkey.");
 		initializeClass(null, CM_SHOULDER_2, CM_SHOULDER_1, CM_CORPSE, getLoadout(),
@@ -47,11 +62,13 @@ public class ClimbingMonkey extends CustomPlayer {
 	}
 	
 	public ArrayList<String> getStartingDeck() {
+		logger.info("Start to get starting deck.");
+		
 		ArrayList<String> retVal = new ArrayList<String>();
-		retVal.add("CM_Strick");
-		retVal.add("CM_Strick");
-		retVal.add("CM_Strick");
-		retVal.add("CM_Strick");
+		retVal.add("CM_Strike");
+		retVal.add("CM_Strike");
+		retVal.add("CM_Strike");
+		retVal.add("CM_Strike");
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
@@ -60,6 +77,8 @@ public class ClimbingMonkey extends CustomPlayer {
 	}
 	
 	public ArrayList<String> getStartingRelics() {
+		logger.info("Start to get starting relics.");
+		
 		ArrayList<String> retVal = new ArrayList<String>();
 		retVal.add("CM_BananaExtractor");
 		UnlockTracker.markRelicAsSeen("CM_BananaExtractor");
