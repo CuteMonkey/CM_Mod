@@ -14,29 +14,33 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import cm_mod.patches.AddCardColor;
 import cm_mod.actions.ConsumeBananaEssence;
-import basemod.abstracts.CustomCard;
+import cm_mod.cards.CMCard;
 
-public class Uppercut extends CustomCard {
+public class Uppercut extends CMCard {
 	public static final String ID = "CM_Uppercut";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String IMG_PATH = "img/cards/strike.png";
+	public static final String IMG_PATH = "img/cards/uppercut.png";
 	
 	private static final int COST = 2;
 	private static final int ATTACT_DMG = 10;
 	private static final int UPGRADE_PLUS_DMG = 5;
 	private static final int WEAK_AMT = 1;
+	private static final int UPGRADE_PLUS_WEAK = 1;
 	//the amount of banana essence needed to trigger banana burst
-	private static final int BE_NEED_AMT = 1;
-	private static final int EXTRA_WEAK_AMT = 1;
+	private static final int BB_COST = 1;
+	private static final int BB_WEAK_AMT = 1;
+	private static final int BB_UPGRADE_PLUS_WEAK = 1;
 	
 	public Uppercut() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AddCardColor.BANANA_COLOR,
 			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 		this.baseMagicNumber = WEAK_AMT;
 		this.baseDamage = ATTACT_DMG;
+		this.BBCost = BB_COST;
+		this.BBMagic = BB_WEAK_AMT;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -46,13 +50,10 @@ public class Uppercut extends CustomCard {
 			false), this.magicNumber, true));
 		
 		//action of banana burst
-		if(p.hasPower("CM_BananaEssence")) {
-			if(p.getPower("CM_BananaEssence").amount >= BE_NEED_AMT) {
-				AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, p, BE_NEED_AMT));
-				this.magicNumber = EXTRA_WEAK_AMT;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber,
-						false), this.magicNumber, true));
-			}
+		if(isBEEnough(p)) {
+			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, p, BB_COST));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, BB_WEAK_AMT,
+				false), BB_WEAK_AMT));
 		}
 	}
 	
@@ -64,6 +65,8 @@ public class Uppercut extends CustomCard {
 		if(!this.upgraded) {
 			upgradeName();
 			upgradeDamage(UPGRADE_PLUS_DMG);
+			upgradeMagicNumber(UPGRADE_PLUS_WEAK);
+			upgradeBBMagic(BB_UPGRADE_PLUS_WEAK);
 		}
 	}
 }

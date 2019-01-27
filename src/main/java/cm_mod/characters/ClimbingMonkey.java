@@ -49,7 +49,7 @@ public class ClimbingMonkey extends CustomPlayer {
 	};
 	private static final String ORB_VFX = "img/UI/energy_yellow_VFX.png";
 	private static final float[] LAYER_SPEED = {
-		-30.0f, 20.0f, -10.0f, 0.0f, -10.0f, 8.0f, -5.0f, 0.0f};
+		0.0f, 20.0f, 20.0f, 20.0f, 20.0f};
 	
 	public ClimbingMonkey(String name) {
 		super(name, AddPlayerClass.CLIMBING_MONKEY, ORB_TEXTURES, ORB_VFX, LAYER_SPEED,
@@ -74,6 +74,7 @@ public class ClimbingMonkey extends CustomPlayer {
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
 		retVal.add("CM_Uppercut");
+		retVal.add("CM_WildIntuition");
 		return retVal;
 	}
 	
@@ -100,13 +101,25 @@ public class ClimbingMonkey extends CustomPlayer {
 	private static String spireHeartText = setSPText();
 	
 	private static String setTitle() {
-		String retVal = "";
+		String retVal;
+		
+		if(Settings.language == Settings.GameLanguage.ENG) {
+			retVal = "A cute monkey with adventurous spirit.";
+		} else {
+			retVal = "富有冒險精神的可愛猴子";
+		}
 		
 		return retVal;
 	}
 	
 	private static String setFlavor() {
-		String retVal = "";
+		String retVal;
+		
+		if(Settings.language == Settings.GameLanguage.ENG) {
+			retVal = "The monkey from Cute Forest, and it is good at showing its ability by \"using\" bananas.";
+		} else {
+			retVal = "來自可愛之森的猴子，擅長利用香蕉發揮能力。";
+		}
 		
 		return retVal;
 	}

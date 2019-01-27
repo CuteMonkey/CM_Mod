@@ -9,6 +9,18 @@
 	},
 	"CM_Uppercut": {
 		"NAME": "上鉤拳",
-		"DESCRIPTION": "造成 !D! 點傷害並給予 !M! 層 虛弱 。 NL 蕉爆 (1): 給予 !M! 層 虛弱"
+		"DESCRIPTION": "造成 !D! 點傷害並給予 !M! 層 虛弱 。 NL 蕉爆 ( !BBC! ): 給予 !BBM! 層 虛弱"
+	},
+	"CM_WildIntuition": {
+		"NAME": "野性直覺",
+		"DESCRIPTION": "獲得 !B! 點 格擋 。 NL 蕉爆 ( !BBC! ): 抽 !BBM! 張牌"
+	},
+	"CM_BananaMeal": {
+		"NAME": "香蕉大餐",
+		"DESCRIPTION": "當生命值低於一半時，回復 !M! 生命。 NL 否則回復 !BBM! 生命。 消耗"
+	},
+	"CM_Stumble": {
+		"NAME": "絆倒",
+		"DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 蕉爆 ( !BBC! ): 給予所有敵人 !BBM! 層 易傷"
 	}
 }

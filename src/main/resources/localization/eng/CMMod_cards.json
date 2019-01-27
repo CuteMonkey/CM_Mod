@@ -9,6 +9,10 @@
 	},
 	"CM_Uppercut": {
 		"NAME": "Uppercut",
-		"DESCRIPTION": "Deal !D! damaga and give !M! Weak . NL Banana Burst (1)\: Give !M! Weak."
+		"DESCRIPTION": "Deal !D! damaga and give !M! Weak . NL Banana Burst ( !BBC! ): Give !BBM! Weak."
+	},
+	"CM_WildIntuition": {
+		"NAME": "Wild Intuition",
+		"DESCRIPTION": "Gain !B! Block. NL Banana Burst ( !BBC! ): Draw !BBM! cards."
 	}
 }

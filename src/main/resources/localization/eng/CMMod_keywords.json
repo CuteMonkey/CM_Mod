@@ -4,7 +4,13 @@
 			"NAMES": [
 				"Banana Burst"
 			],
-			"DESCRIPTION": "Consume banana essence to do extra actions."
+			"DESCRIPTION": "Consume Banana Essence to do extra actions."
+		},
+		{
+			"NAMES": [
+				"Banana Essence"
+			],
+			"DESCRIPTION": "The essence extracted from bananas, can excite the potential of monkeys."
 		}
 	]
 }

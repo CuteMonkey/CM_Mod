@@ -1,7 +1,9 @@
 package cm_mod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 
@@ -15,8 +17,12 @@ public class ConsumeBananaEssence extends AbstractGameAction {
 	}
 	
 	public void update() {
-		if(this.source.hasPower("CM_BananaEssence")) {
-			this.source.getPower("CM_BananaEssence").reducePower(this.amount);
+		if(this.target.hasPower("CM_BananaEssence")) {
+			this.target.getPower("CM_BananaEssence").reducePower(this.amount);
+			if(this.target.getPower("CM_BananaEssence").amount == 0) {
+				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.source,
+					"CM_BananaEssence"));
+			}
 		}
 		this.isDone = true;
 	}

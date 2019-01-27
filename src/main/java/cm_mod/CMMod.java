@@ -31,6 +31,7 @@ import java.nio.charset.StandardCharsets;
 
 import cm_mod.cards.*;
 import cm_mod.relics.*;
+import cm_mod.variables.*;
 import cm_mod.characters.ClimbingMonkey;
 
 @SpireInitializer
@@ -160,11 +161,21 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	public void receiveEditCards() {
 		logger.info("Start to create cards.");
 		
-		//Basic cards
+		//basic cards
 		BaseMod.addCard(new Strike());
 		BaseMod.addCard(new Defend());
-		//Common cards
+		//common cards
 		BaseMod.addCard(new Uppercut());
+		BaseMod.addCard(new WildIntuition());
+		BaseMod.addCard(new Stumble());
+		//uncommon cards
+		BaseMod.addCard(new BananaMeal());
+		
+		//dynamic variables
+		BaseMod.addDynamicVariable(new BananaBurstCost());
+		BaseMod.addDynamicVariable(new BananaBurstDamage());
+		BaseMod.addDynamicVariable(new BananaBurstBlock());
+		BaseMod.addDynamicVariable(new BananaBurstMagic());
 		
 		logger.info("Create cards complete.");
 	}

@@ -13,9 +13,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import basemod.helpers.BaseModCardTags;
 
 import cm_mod.patches.AddCardColor;
-import basemod.abstracts.CustomCard;
+import cm_mod.cards.CMCard;
 
-public class Strike extends CustomCard {
+public class Strike extends CMCard {
 	public static final String ID = "CM_Strike";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -30,9 +30,9 @@ public class Strike extends CustomCard {
 	public Strike() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AddCardColor.BANANA_COLOR,
 			AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
-		this.baseDamage = ATTACT_DMG;
 		tags.add(AbstractCard.CardTags.STRIKE);
 		tags.add(BaseModCardTags.BASIC_STRIKE);
+		this.baseDamage = ATTACT_DMG;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
