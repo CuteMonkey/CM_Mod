@@ -20,9 +20,10 @@ public class BananaMeal extends CMCard {
 	public static final String IMG_PATH = "img/cards/no_image.png";
 	
 	private static final int COST = 0;
-	private static final int HP_RECOVER_1 = 10;
+	private static final int HP_RECOVER_1 = 12;
 	private static final int HP_RECOVER_2 = 7;
-	private static final int UPGRADE_PLUS_RECOVER = 3;
+	private static final int UPGRADE_PLUS_RECOVER_1 = 4;
+	private static final int UPGRADE_PLUS_RECOVER_2 = 3;
 	
 	public BananaMeal() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AddCardColor.BANANA_COLOR, CardRarity.UNCOMMON,
@@ -47,8 +48,8 @@ public class BananaMeal extends CMCard {
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
-			upgradeMagicNumber(UPGRADE_PLUS_RECOVER);
-			upgradeBBMagic(UPGRADE_PLUS_RECOVER);
+			upgradeMagicNumber(UPGRADE_PLUS_RECOVER_1);
+			upgradeBBMagic(UPGRADE_PLUS_RECOVER_2);
 		}
 	}
 }

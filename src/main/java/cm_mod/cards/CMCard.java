@@ -45,7 +45,7 @@ public abstract class CMCard extends CustomCard {
 		
 		if(p.hasPower("Weakened")) {
 			this.isBBDamageModified = true;
-			temp *= 0.6f;
+			temp *= 0.75f;
 		}
 		if(m.hasPower("Vulnerable")) {
 			this.isBBDamageModified = true;

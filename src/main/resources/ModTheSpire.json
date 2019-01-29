@@ -5,9 +5,9 @@
 		"CuteMonkey"
 	],
 	"description": "Mod for the new character Climbing Monkey.",
-	"version": "0.3.0",
-	"sts_version": "01-10-2019",
-	"mts_version": "3.6.0",
+	"version": "0.3.1",
+	"sts_version": "01-23-2019",
+	"mts_version": "3.8.0",
 	"depandencies": [
 		"basemod"
 	]

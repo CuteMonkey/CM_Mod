@@ -170,6 +170,8 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Stumble());
 		//uncommon cards
 		BaseMod.addCard(new BananaMeal());
+		//rare cards
+		BaseMod.addCard(new PlantBananaTree());
 		
 		//dynamic variables
 		BaseMod.addDynamicVariable(new BananaBurstCost());

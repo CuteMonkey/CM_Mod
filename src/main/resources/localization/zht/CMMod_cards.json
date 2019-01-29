@@ -22,5 +22,10 @@
 	"CM_Stumble": {
 		"NAME": "絆倒",
 		"DESCRIPTION": "對所有敵人造成 !D! 點傷害。 NL 蕉爆 ( !BBC! ): 給予所有敵人 !BBM! 層 易傷"
+	},
+	"CM_PlantBananaTree": {
+		"NAME": "種香蕉樹",
+		"DESCRIPTION": "獲得 !M! 點 香蕉樹苗",
+		"UPGRADE_DESCRIPTION": "固有 。 NL 獲得 !M! 點 香蕉樹苗"
 	}
 }
