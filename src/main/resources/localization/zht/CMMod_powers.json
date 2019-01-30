@@ -14,5 +14,26 @@
 			"離下次生產剩",
 			"回合。"
 		]
+	},
+	"CM_AutoBananaShield": {
+		"NAME": "自動香蕉護盾",
+		"DESCRIPTIONS": [
+			"每消耗1點 香蕉精華 ，獲得",
+			"點 格擋。"
+		]
+	},
+	"CM_BananaFlameGas": {
+		"NAME": "香蕉焰氣",
+		"DESCRIPTIONS": [
+			"每獲得1點 香蕉精華 ，對隨機敵人造成",
+			"點傷害。"
+		]
+	},
+	"CM_BananaGainSeal": {
+		"NAME": "香蕉獲取封印",
+		"DESCRIPTIONS": [
+			"在",
+			"回合內無法獲得 香蕉精華 。"
+		]
 	}
 }

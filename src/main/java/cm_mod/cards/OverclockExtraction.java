@@ -14,45 +14,48 @@ import org.apache.logging.log4j.Logger;
 import cm_mod.CMMod;
 import cm_mod.cards.CMCard;
 import cm_mod.patches.AddCardColor;
-import cm_mod.powers.BananaSapling;
+import cm_mod.powers.BananaGainSeal;
+import cm_mod.powers.BananaFlameGas;
 
-public class PlantBananaTree extends CMCard {
+public class OverclockExtraction extends CMCard {
 	public static final Logger logger = LogManager.getLogger(CMMod.class.getName());
 	
-	public static final String ID = "CM_PlantBananaTree";
+	public static final String ID = "CM_OverclockExtraction";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/no_image.png";
 	
 	private static final int COST = 2;
-	private static final int MAGIC_AMT = 1;
+	private static final int BGS_AMT = 2;
+	private static final int BFG_AMT = 4;
+	private static final int UPGRADE_PLUS_BFG = 1;
 	
-	public PlantBananaTree() {
+	public OverclockExtraction() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AddCardColor.BANANA_COLOR,
-				CardRarity.RARE, CardTarget.SELF);
-		this.baseMagicNumber = this.magicNumber = MAGIC_AMT;
+			CardRarity.UNCOMMON, CardTarget.SELF);
+		this.BCurse = BGS_AMT;
+		this.baseMagicNumber = this.magicNumber = BFG_AMT;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		logger.info("Apply " + this.magicNumber + " Banana Sapling to " + p.name + ".");
+		logger.info("Use OverclockExtractor. Magic numbers: " + this.baseMagicNumber + ", " + this.magicNumber);
 		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BananaSapling(p, this.magicNumber),
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BananaGainSeal(p, this.BCurse),
+			this.BCurse));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BananaFlameGas(p, this.magicNumber),
 			this.magicNumber));
 	}
 	
 	public AbstractCard makeCopy() {
-		return new PlantBananaTree();
+		return new OverclockExtraction();
 	}
 	
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
-			this.isInnate = true;
-			this.rawDescription = UPGRADE_DESCRIPTION;
-			initializeDescription();
+			upgradeMagicNumber(UPGRADE_PLUS_BFG);
 		}
 	}
 }

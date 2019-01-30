@@ -49,7 +49,7 @@ public class ClimbingMonkey extends CustomPlayer {
 	};
 	private static final String ORB_VFX = "img/UI/energy_yellow_VFX.png";
 	private static final float[] LAYER_SPEED = {
-		0.0f, 20.0f, 20.0f, 20.0f, 20.0f};
+		0.0f, 30.0f, 30.0f, 30.0f, 30.0f};
 	
 	public ClimbingMonkey(String name) {
 		super(name, AddPlayerClass.CLIMBING_MONKEY, ORB_TEXTURES, ORB_VFX, LAYER_SPEED,
@@ -180,7 +180,7 @@ public class ClimbingMonkey extends CustomPlayer {
 		return FontHelper.energyNumFontRed;
 	}
 	
-	//Copy from Ironclad
+	//copy from Ironclad
 	public void doCharSelectScreenSelectEffect() {
 		logger.info("Start to do character select screen select effect.");
 		

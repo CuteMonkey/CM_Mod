@@ -27,6 +27,8 @@ public abstract class CMCard extends CustomCard {
 	public int BBMagic = 0;
 	public boolean upgradedBBMagic = false;
 	
+	public int BCurse = 0;
+	
 	protected void reseBBtAttributes() {
 		this.BBDamage = this.BBBaseDamage;
 		this.isBBDamageModified = false;

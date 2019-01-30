@@ -31,7 +31,7 @@ public class WildIntuition extends CMCard {
 	public WildIntuition() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL, AddCardColor.BANANA_COLOR,
 			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF);
-		this.baseBlock = BLOCK_AMT;
+		this.baseBlock = this.block = BLOCK_AMT;
 		this.BBCost = BB_COST;
 		this.BBMagic = BB_DRAW;
 	}
@@ -40,7 +40,7 @@ public class WildIntuition extends CMCard {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 		
 		if(isBEEnough(p)) {
-			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, p, this.BBCost));
+			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.BBMagic));
 		}
 	}

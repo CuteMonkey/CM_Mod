@@ -170,6 +170,8 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Stumble());
 		//uncommon cards
 		BaseMod.addCard(new BananaMeal());
+		BaseMod.addCard(new BananaReuse());
+		BaseMod.addCard(new OverclockExtraction());
 		//rare cards
 		BaseMod.addCard(new PlantBananaTree());
 		
@@ -178,6 +180,7 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		BaseMod.addDynamicVariable(new BananaBurstDamage());
 		BaseMod.addDynamicVariable(new BananaBurstBlock());
 		BaseMod.addDynamicVariable(new BananaBurstMagic());
+		BaseMod.addDynamicVariable(new BananaCurse());
 		
 		logger.info("Create cards complete.");
 	}

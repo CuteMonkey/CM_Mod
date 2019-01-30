@@ -37,8 +37,8 @@ public class Uppercut extends CMCard {
 	public Uppercut() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK, AddCardColor.BANANA_COLOR,
 			AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
-		this.baseMagicNumber = WEAK_AMT;
-		this.baseDamage = ATTACT_DMG;
+		this.baseMagicNumber = this.magicNumber = WEAK_AMT;
+		this.baseDamage = this.damage = ATTACT_DMG;
 		this.BBCost = BB_COST;
 		this.BBMagic = BB_WEAK_AMT;
 	}
@@ -51,7 +51,7 @@ public class Uppercut extends CMCard {
 		
 		//action of banana burst
 		if(isBEEnough(p)) {
-			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, p, BB_COST));
+			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, BB_COST));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, BB_WEAK_AMT,
 				false), BB_WEAK_AMT));
 		}

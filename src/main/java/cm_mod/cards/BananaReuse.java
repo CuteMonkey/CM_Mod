@@ -14,45 +14,43 @@ import org.apache.logging.log4j.Logger;
 import cm_mod.CMMod;
 import cm_mod.cards.CMCard;
 import cm_mod.patches.AddCardColor;
-import cm_mod.powers.BananaSapling;
+import cm_mod.powers.AutoBananaShield;
 
-public class PlantBananaTree extends CMCard {
+public class BananaReuse extends CMCard {
 	public static final Logger logger = LogManager.getLogger(CMMod.class.getName());
 	
-	public static final String ID = "CM_PlantBananaTree";
+	public static final String ID = "CM_BananaReuse";
 	
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/no_image.png";
 	
 	private static final int COST = 2;
-	private static final int MAGIC_AMT = 1;
+	private static final int ABS_AMT = 3;
+	private static final int UPGRADE_PLUS_ABS = 1;
 	
-	public PlantBananaTree() {
+	public BananaReuse() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AddCardColor.BANANA_COLOR,
-				CardRarity.RARE, CardTarget.SELF);
-		this.baseMagicNumber = this.magicNumber = MAGIC_AMT;
+			CardRarity.UNCOMMON, CardTarget.SELF);
+		this.baseMagicNumber = this.magicNumber = ABS_AMT;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		logger.info("Apply " + this.magicNumber + " Banana Sapling to " + p.name + ".");
+		logger.info("Use BananaReuse. Magic numbers: " + this.baseMagicNumber + ", " + this.magicNumber);
 		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BananaSapling(p, this.magicNumber),
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AutoBananaShield(p, this.magicNumber),
 			this.magicNumber));
 	}
 	
 	public AbstractCard makeCopy() {
-		return new PlantBananaTree();
+		return new BananaReuse();
 	}
 	
 	public void upgrade() {
 		if(!this.upgraded) {
 			upgradeName();
-			this.isInnate = true;
-			this.rawDescription = UPGRADE_DESCRIPTION;
-			initializeDescription();
+			upgradeMagicNumber(UPGRADE_PLUS_ABS);
 		}
 	}
 }

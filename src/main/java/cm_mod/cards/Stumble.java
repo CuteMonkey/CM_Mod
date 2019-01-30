@@ -33,7 +33,7 @@ public class Stumble extends CMCard {
 	public Stumble() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AddCardColor.BANANA_COLOR,
 			CardRarity.COMMON, CardTarget.ALL_ENEMY);
-		this.baseDamage = DAMAGE_AMT;
+		this.baseDamage = this.damage = DAMAGE_AMT;
 		this.isMultiDamage = true;
 		this.BBCost = BB_COST;
 		this.BBMagic = BB_VULNERABLE_AMT;
@@ -44,7 +44,7 @@ public class Stumble extends CMCard {
 			this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
 		
 		if(isBEEnough(p)) {
-			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, p, this.BBCost));
+			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
 			for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
 				if((!monster.isDead) && (!monster.isDying)) {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p,

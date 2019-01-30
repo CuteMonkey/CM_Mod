@@ -17,7 +17,7 @@
 	},
 	"CM_BananaMeal": {
 		"NAME": "香蕉大餐",
-		"DESCRIPTION": "當生命值低於一半時，回復 !M! 生命。 NL 否則回復 !BBM! 生命。 消耗"
+		"DESCRIPTION": "當生命值低於一半時，消耗 !BBD! 點 香蕉精華 回復 !M! 生命。 NL 否則消耗 !BBB! 點 香蕉精華 回復 !BBM! 生命。 消耗"
 	},
 	"CM_Stumble": {
 		"NAME": "絆倒",
@@ -27,5 +27,13 @@
 		"NAME": "種香蕉樹",
 		"DESCRIPTION": "獲得 !M! 點 香蕉樹苗",
 		"UPGRADE_DESCRIPTION": "固有 。 NL 獲得 !M! 點 香蕉樹苗"
+	},
+	"CM_BananaReuse": {
+		"NAME": "香蕉再利用",
+		"DESCRIPTION": "獲得 !M! 點 自動香蕉護盾"
+	},
+	"CM_OverclockExtraction": {
+		"NAME": "超頻萃取",
+		"DESCRIPTION": "獲得 !BC! 層 香蕉獲取封印 和 !M! 點 香蕉焰氣"
 	}
 }

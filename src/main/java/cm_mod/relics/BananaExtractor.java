@@ -4,10 +4,9 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-import cm_mod.powers.BananaEssence;
+import cm_mod.actions.GainBananaEssence;
 
 import basemod.abstracts.CustomRelic;
 
@@ -30,8 +29,7 @@ public class BananaExtractor extends CustomRelic {
 	public void onUseCard(AbstractCard card, UseCardAction action) {
 		this.counter++;
 		if(this.counter == THRESHOLD) {
-			AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player,
-				AbstractDungeon.player, new BananaEssence(AbstractDungeon.player, 1), 1, true));
+			AbstractDungeon.actionManager.addToTop(new GainBananaEssence(AbstractDungeon.player, 1, true));
 			this.counter = 0;
 		}
 	}

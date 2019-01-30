@@ -32,7 +32,7 @@ public class Strike extends CMCard {
 			AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
 		tags.add(AbstractCard.CardTags.STRIKE);
 		tags.add(BaseModCardTags.BASIC_STRIKE);
-		this.baseDamage = ATTACT_DMG;
+		this.baseDamage = this.damage = ATTACT_DMG;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {

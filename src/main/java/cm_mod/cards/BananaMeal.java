@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import cm_mod.patches.AddCardColor;
 import cm_mod.cards.CMCard;
+import cm_mod.actions.ConsumeBananaEssence;
 
 public class BananaMeal extends CMCard {
 	public static final String ID = "CM_BananaMeal";
@@ -20,24 +21,39 @@ public class BananaMeal extends CMCard {
 	public static final String IMG_PATH = "img/cards/no_image.png";
 	
 	private static final int COST = 0;
-	private static final int HP_RECOVER_1 = 12;
+	private static final int RECOVER_BE_COST_1 = 2;
+	private static final int RECOVER_BE_COST_2 = 1;
+	private static final int HP_RECOVER_1 = 14;
 	private static final int HP_RECOVER_2 = 7;
-	private static final int UPGRADE_PLUS_RECOVER_1 = 4;
+	private static final int UPGRADE_PLUS_RECOVER_1 = 6;
 	private static final int UPGRADE_PLUS_RECOVER_2 = 3;
 	
 	public BananaMeal() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AddCardColor.BANANA_COLOR, CardRarity.UNCOMMON,
 			CardTarget.SELF);
 		this.tags.add(CardTags.HEALING);
-		this.baseMagicNumber = HP_RECOVER_1;
+		
+		this.BBBaseDamage = this.BBDamage = RECOVER_BE_COST_1;
+		this.BBBaseBlock = this.BBBlock = RECOVER_BE_COST_2;
+		this.baseMagicNumber = this.magicNumber = HP_RECOVER_1;
 		this.BBMagic = HP_RECOVER_2;
+		
+		this.exhaust = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if(p.currentHealth < p.maxHealth / 2) {
-			AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.magicNumber));
+		if(p.currentHealth < (p.maxHealth / 2)) {
+			this.BBCost = RECOVER_BE_COST_1;
+			if(isBEEnough(p)) {
+				AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, RECOVER_BE_COST_1));
+				AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.magicNumber));
+			}
 		} else {
-			AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.BBMagic));
+			this.BBCost = RECOVER_BE_COST_2;
+			if(isBEEnough(p)) {
+				AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, RECOVER_BE_COST_2));
+				AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.BBMagic));
+			}
 		}
 	}
 	
