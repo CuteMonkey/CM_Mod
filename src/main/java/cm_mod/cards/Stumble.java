@@ -21,11 +21,11 @@ public class Stumble extends CMCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String IMG_PATH = "img/cards/no_image.png";
+	public static final String IMG_PATH = "img/cards/stumble.png";
 	
 	private static final int COST = 1;
-	private static final int DAMAGE_AMT = 8;
-	private static final int UPGRADE_PLUS_DMG = 4;
+	private static final int DAMAGE_AMT = 7;
+	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int BB_COST = 1;
 	private static final int BB_VULNERABLE_AMT = 1;
 	private static final int BB_UPGRADE_PLUS_VULNERABLE = 1;

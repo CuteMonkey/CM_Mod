@@ -29,7 +29,7 @@ public class BananaExtractor extends CustomRelic {
 	public void onUseCard(AbstractCard card, UseCardAction action) {
 		this.counter++;
 		if(this.counter == THRESHOLD) {
-			AbstractDungeon.actionManager.addToTop(new GainBananaEssence(AbstractDungeon.player, 1, true));
+			AbstractDungeon.actionManager.addToTop(new GainBananaEssence(AbstractDungeon.player, 1, true, true));
 			this.counter = 0;
 		}
 	}

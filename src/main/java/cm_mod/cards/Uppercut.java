@@ -25,7 +25,7 @@ public class Uppercut extends CMCard {
 	public static final String IMG_PATH = "img/cards/uppercut.png";
 	
 	private static final int COST = 2;
-	private static final int ATTACT_DMG = 10;
+	private static final int ATTACT_DMG = 11;
 	private static final int UPGRADE_PLUS_DMG = 5;
 	private static final int WEAK_AMT = 1;
 	private static final int UPGRADE_PLUS_WEAK = 1;
@@ -51,9 +51,9 @@ public class Uppercut extends CMCard {
 		
 		//action of banana burst
 		if(isBEEnough(p)) {
-			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, BB_COST));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, BB_WEAK_AMT,
-				false), BB_WEAK_AMT));
+			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.BBMagic,
+				false), this.BBMagic));
 		}
 	}
 	

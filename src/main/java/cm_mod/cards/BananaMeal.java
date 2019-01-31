@@ -18,7 +18,7 @@ public class BananaMeal extends CMCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String IMG_PATH = "img/cards/no_image.png";
+	public static final String IMG_PATH = "img/cards/banana_meal.png";
 	
 	private static final int COST = 0;
 	private static final int RECOVER_BE_COST_1 = 2;
@@ -45,13 +45,13 @@ public class BananaMeal extends CMCard {
 		if(p.currentHealth < (p.maxHealth / 2)) {
 			this.BBCost = RECOVER_BE_COST_1;
 			if(isBEEnough(p)) {
-				AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, RECOVER_BE_COST_1));
+				AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
 				AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.magicNumber));
 			}
 		} else {
 			this.BBCost = RECOVER_BE_COST_2;
 			if(isBEEnough(p)) {
-				AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, RECOVER_BE_COST_2));
+				AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
 				AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.BBMagic));
 			}
 		}

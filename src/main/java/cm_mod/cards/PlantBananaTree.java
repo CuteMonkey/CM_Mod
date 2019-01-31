@@ -25,7 +25,7 @@ public class PlantBananaTree extends CMCard {
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-	public static final String IMG_PATH = "img/cards/no_image.png";
+	public static final String IMG_PATH = "img/cards/plant_banana_tree.png";
 	
 	private static final int COST = 2;
 	private static final int MAGIC_AMT = 1;

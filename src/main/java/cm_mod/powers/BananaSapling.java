@@ -52,7 +52,7 @@ public class BananaSapling extends AbstractPower {
 		roundCount--;
 		if(roundCount == 0) {
 			AbstractDungeon.actionManager.addToBottom(new GainBananaEssence((AbstractPlayer)this.owner,
-				this.amount, true));
+				this.amount, true, false));
 			roundCount = PRODUCE_INTERVAL;
 		}
 		

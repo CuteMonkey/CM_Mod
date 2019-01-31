@@ -17,7 +17,7 @@
 	},
 	"CM_BananaMeal": {
 		"NAME": "香蕉大餐",
-		"DESCRIPTION": "當生命值低於一半時，消耗 !BBD! 點 香蕉精華 回復 !M! 生命。 NL 否則消耗 !BBB! 點 香蕉精華 回復 !BBM! 生命。 消耗"
+		"DESCRIPTION": "當生命值低於一半時， 耗蕉 ( !BBD! ): 回復 !M! 生命。 NL 否則 耗蕉 ( !BBB! ): 回復 !BBM! 生命。 消耗"
 	},
 	"CM_Stumble": {
 		"NAME": "絆倒",
