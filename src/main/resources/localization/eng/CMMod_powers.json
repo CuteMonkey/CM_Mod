@@ -4,5 +4,36 @@
 		"DESCRIPTIONS": [
 			"The essence extracted from bananas, can excite the potential of monkeys."
 		]
+	},
+	"CM_BananaSapling": {
+		"NAME": "Banana Sapling",
+		"DESCRIPTIONS": [
+			"Every ",
+			" rounds generate ",
+			" Banana Essence",
+			"Remain ",
+			" rounds from the next generation."
+		]
+	},
+	"CM_AutoBananaShield": {
+		"NAME": "Auto Banana Shield",
+		"DESCRIPTIONS": [
+			"Every time you consume 1 Banana Essence, you gain ",
+			" Block."
+		]
+	},
+	"CM_BananaFlameGas": {
+		"NAME": "Banana Flame Gas",
+		"DESCRIPTIONS": [
+			"Every time you gain 1 Banana Essence, you deal ",
+			" damage to a random enemy."
+		]
+	},
+	"CM_BananaGainSeal": {
+		"NAME": "Banana Gain Seal",
+		"DESCRIPTIONS": [
+			"You can not gain Banana Essence within ",
+			" rounds."
+		]
 	}
 }

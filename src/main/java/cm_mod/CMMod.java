@@ -190,6 +190,7 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		logger.info("Start to create relics.");
 		
 		BaseMod.addRelicToCustomPool(new BananaExtractor(), BANANA_COLOR);
+		BaseMod.addRelicToCustomPool(new GlodenBananaExtractor(), BANANA_COLOR);
 		
 		logger.info("Create relics complete.");
 	}

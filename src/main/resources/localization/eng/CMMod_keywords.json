@@ -8,9 +8,39 @@
 		},
 		{
 			"NAMES": [
+				"Banana Consumption"
+			],
+			"DESCRIPTION": "Consume Banana Essence to do actions."
+		},
+		{
+			"NAMES": [
 				"Banana Essence"
 			],
 			"DESCRIPTION": "The essence extracted from bananas, can excite the potential of monkeys."
+		},
+		{
+			"NAMES": [
+				"Banana Sapling"
+			],
+			"DESCRIPTION": "Generate Banana Essence automatically."
+		},
+		{
+			"NAMES": [
+				"Auto Banana Shield"
+			],
+			"DESCRIPTION": "Gain Block whenever you consume Banana Essence."
+		},
+		{
+			"NAMES": [
+				"Banana Flame Gas"
+			],
+			"DESCRIPTION": "Deal damage to a random enemy whenever you gain Banana Essence."
+		},
+		{
+			"NAMES": [
+				"Banana Gain Seal"
+			],
+			"DESCRIPTION": "Can not gain Banana Essence in a given period of time."
 		}
 	]
 }

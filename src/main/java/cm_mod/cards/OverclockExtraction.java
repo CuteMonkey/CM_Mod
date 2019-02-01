@@ -27,7 +27,7 @@ public class OverclockExtraction extends CMCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/overclock_extraction.png";
 	
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int BGS_AMT = 2;
 	private static final int BFG_AMT = 4;
 	private static final int UPGRADE_PLUS_BFG = 1;

@@ -4,7 +4,17 @@
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
 			"Every you play ", 
-			" cards, gain 1 Banana Essence in each battle."
+			" cards, gain ",
+			" Banana Essence in each battle."
+		]
+	},
+	"CM_GoldenBananaExtractor": {
+		"NAME": "Golden Banana Extractor",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"Every you play ", 
+			" cards, gain ",
+			" Banana Essence in each battle."
 		]
 	}
 }

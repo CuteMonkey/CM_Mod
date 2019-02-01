@@ -4,7 +4,17 @@
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
 			"在每場戰鬥中，每打出",
-			"張牌，獲得1點 香蕉精華 。"
+			"張牌，獲得",
+			"點 香蕉精華 。"
+		]
+	},
+	"CM_GlodenBananaExtractor": {
+		"NAME": "黃金香蕉萃取器",
+		"FLAVOR": "",
+		"DESCRIPTIONS": [
+			"在每場戰鬥中，每打出",
+			"張牌，獲得",
+			"點 香蕉精華 。"
 		]
 	}
 }

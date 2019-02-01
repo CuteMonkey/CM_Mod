@@ -15,6 +15,7 @@ public class BananaExtractor extends CustomRelic {
 	public static final String IMG = "img/relics/banana_extractor.png";
 	
 	private static final int THRESHOLD = 3;
+	private static final int BE_GAIN_AMT = 1;
 	
 	public BananaExtractor() {
 		super(ID, ImageMaster.loadImage(IMG), AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.MAGICAL);
@@ -22,14 +23,15 @@ public class BananaExtractor extends CustomRelic {
 	
 	@Override
 	public String getUpdatedDescription() {
-		return DESCRIPTIONS[0] + THRESHOLD + DESCRIPTIONS[1];
+		return DESCRIPTIONS[0] + THRESHOLD + DESCRIPTIONS[1] + BE_GAIN_AMT + DESCRIPTIONS[2];
 	}
 	
 	@Override
 	public void onUseCard(AbstractCard card, UseCardAction action) {
 		this.counter++;
 		if(this.counter == THRESHOLD) {
-			AbstractDungeon.actionManager.addToTop(new GainBananaEssence(AbstractDungeon.player, 1, true, true));
+			AbstractDungeon.actionManager.addToBottom(new GainBananaEssence(AbstractDungeon.player,
+				BE_GAIN_AMT, true, false));
 			this.counter = 0;
 		}
 	}

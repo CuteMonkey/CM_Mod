@@ -9,10 +9,31 @@
 	},
 	"CM_Uppercut": {
 		"NAME": "Uppercut",
-		"DESCRIPTION": "Deal !D! damaga and give !M! Weak . NL Banana Burst ( !BBC! ): Give !BBM! Weak."
+		"DESCRIPTION": "Deal !D! damage and give !M! Weak . NL Banana Burst ( !BBC! ): Give !BBM! Weak."
 	},
 	"CM_WildIntuition": {
 		"NAME": "Wild Intuition",
 		"DESCRIPTION": "Gain !B! Block. NL Banana Burst ( !BBC! ): Draw !BBM! cards."
+	},
+	"CM_BananaMeal": {
+		"NAME": "Banana Meal",
+		"DESCRIPTION": "Whan HP is less than half, Banana Consumption ( !BBD! ): Recover !M! HP. NL Otherwise, Banana Consumption ( !BBB! ): Recover !BBM! HP. Exhaust."
+	},
+	"CM_Stumble": {
+		"NAME": "Stumble",
+		"DESCRIPTION": "Deal !D! damage to all enemies. NL Banana Burst ( !BBC! ): Give !BBM! Vulnerable to all enemies."
+	},
+	"CM_PlantBananaTree": {
+		"NAME": "Plant Banana Tree",
+		"DESCRIPTION": "Gain !M! Banana Sapling.",
+		"UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Banana Sapling."
+	},
+	"CM_BananaReuse": {
+		"NAME": "Banana Reuse",
+		"DESCRIPTION": "Gain !M! Auto Banana Shield."
+	},
+	"CM_OverclockExtraction": {
+		"NAME": "Overclock Extraction",
+		"DESCRIPTION": "Gain !BC! Banana Gain Seal and !M! Banana Flame Gas."
 	}
 }
