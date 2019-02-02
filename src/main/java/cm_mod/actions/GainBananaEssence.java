@@ -10,27 +10,20 @@ import cm_mod.powers.BananaEssence;
 
 public class GainBananaEssence extends AbstractGameAction {
 	boolean isFast;
-	boolean isFirst;
 	
-	public GainBananaEssence(AbstractPlayer p, int stackAmt, boolean isFast, boolean isFirst) {
+	public GainBananaEssence(AbstractPlayer p, int stackAmt, boolean isFast) {
 		this.duration = Settings.ACTION_DUR_FAST;
 		this.actionType = ActionType.POWER;
 		this.amount = stackAmt;
 		this.source = p;
 		this.target = p;
 		this.isFast = isFast;
-		this.isFirst = isFirst;
 	}
 	
 	public void update() {
 		if(!this.target.hasPower("CM_BananaGainSeal")) {
-			if(this.isFirst) {
-				AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.target, this.source,
-						new BananaEssence(this.target, this.amount), this.amount, this.isFast));
-			} else {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source,
-						new BananaEssence(this.target, this.amount), this.amount, this.isFast));
-			}
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source,
+				new BananaEssence(this.target, this.amount), this.amount, this.isFast));
 		}
 		
 		this.isDone = true;

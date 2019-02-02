@@ -29,6 +29,7 @@ public class Defend extends CMCard {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL, AddCardColor.BANANA_COLOR,
 			AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF);
 		this.tags.add(BaseModCardTags.BASIC_DEFEND);
+		
 		this.baseBlock = this.block = BLOCK_AMT;
 	}
 	

@@ -31,6 +31,7 @@ public class BananaMeal extends CMCard {
 	public BananaMeal() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AddCardColor.BANANA_COLOR, CardRarity.UNCOMMON,
 			CardTarget.SELF);
+		
 		this.tags.add(CardTags.HEALING);
 		
 		this.BBBaseDamage = this.BBDamage = RECOVER_BE_COST_1;

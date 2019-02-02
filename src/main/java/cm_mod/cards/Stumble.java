@@ -33,6 +33,7 @@ public class Stumble extends CMCard {
 	public Stumble() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AddCardColor.BANANA_COLOR,
 			CardRarity.COMMON, CardTarget.ALL_ENEMY);
+		
 		this.baseDamage = this.damage = DAMAGE_AMT;
 		this.isMultiDamage = true;
 		this.BBCost = BB_COST;

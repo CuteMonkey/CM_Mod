@@ -162,18 +162,26 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		logger.info("Start to create cards.");
 		
 		//basic cards
-		BaseMod.addCard(new Strike());
+		BaseMod.addCard(new MonkeyPunch());
 		BaseMod.addCard(new Defend());
 		//common cards
-		BaseMod.addCard(new Uppercut());
+		BaseMod.addCard(new MonkeyUppercut());
 		BaseMod.addCard(new WildIntuition());
 		BaseMod.addCard(new Stumble());
+		BaseMod.addCard(new SerialMonkeyJab());
+		BaseMod.addCard(new WoodenBunker());
+		BaseMod.addCard(new MonkeyTrick());
+		BaseMod.addCard(new LitterStone());
+		BaseMod.addCard(new CriticalDodge());
 		//uncommon cards
 		BaseMod.addCard(new BananaMeal());
 		BaseMod.addCard(new BananaReuse());
 		BaseMod.addCard(new OverclockExtraction());
+		BaseMod.addCard(new BananaBarrier());
+		BaseMod.addCard(new FinalBoxingDance());
 		//rare cards
 		BaseMod.addCard(new PlantBananaTree());
+		BaseMod.addCard(new PotentialErupt());
 		
 		//dynamic variables
 		BaseMod.addDynamicVariable(new BananaBurstCost());

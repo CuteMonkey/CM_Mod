@@ -33,6 +33,7 @@ public class PlantBananaTree extends CMCard {
 	public PlantBananaTree() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AddCardColor.BANANA_COLOR,
 				CardRarity.RARE, CardTarget.SELF);
+		
 		this.baseMagicNumber = this.magicNumber = MAGIC_AMT;
 	}
 	

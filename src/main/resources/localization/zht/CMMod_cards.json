@@ -1,15 +1,15 @@
 {
-	"CM_Strike": {
-		"NAME": "打擊",
-		"DESCRIPTION": "造成 !D! 點傷害"
+	"CM_MonkeyPunch": {
+		"NAME": "猴拳",
+		"DESCRIPTION": "這是 猴拳卡 。 NL 造成 !D! 點傷害"
 	},
 	"CM_Defend": {
 		"NAME": "防禦",
 		"DESCRIPTION": "獲得 !B! 點 格擋"
 	},
-	"CM_Uppercut": {
-		"NAME": "上鉤拳",
-		"DESCRIPTION": "造成 !D! 點傷害並給予 !M! 層 虛弱 。 NL 蕉爆 ( !BBC! ): 給予 !BBM! 層 虛弱"
+	"CM_MonkeyUppercut": {
+		"NAME": "上鉤猴拳",
+		"DESCRIPTION": "這是 猴拳卡 。 NL 造成 !D! 點傷害並給予 !M! 層 虛弱 。 NL 蕉爆 ( !BBC! ): 給予 !BBM! 層 虛弱"
 	},
 	"CM_WildIntuition": {
 		"NAME": "野性直覺",
@@ -35,5 +35,37 @@
 	"CM_OverclockExtraction": {
 		"NAME": "超頻萃取",
 		"DESCRIPTION": "獲得 !BC! 層 香蕉獲取封印 和 !M! 點 香蕉焰氣"
+	},
+	"CM_SerialMonkeyJab": {
+		"NAME": "連環刺猴拳",
+		"DESCRIPTION": "這是 猴拳卡 。 NL 造成 !D! 點傷害 !M! 次。 NL 蕉爆 ( !BBC! ): 造成 !BBD! 點傷害 !BBM! 次"
+	},
+	"CM_WoodenBunker": {
+		"NAME": "木頭掩體",
+		"DESCRIPTION": "獲得 !B! 點 格擋 。 NL 蕉爆 ( !BBC! ): 獲得 !BBB! 點 格擋"
+	},
+	"CM_MonkeyTrick": {
+		"NAME": "猴子把戲",
+		"DESCRIPTION": "抽 !M! 張牌，丟棄 !BC! 張牌"
+	},
+	"CM_LitterStone": {
+		"NAME": "亂丟石頭",
+		"DESCRIPTION": "對隨機敵人造成 !D! 點傷害 !M! 次"
+	},
+	"CM_CriticalDodge": {
+		"NAME": "緊急閃避",
+		"DESCRIPTION": "每有一名敵人，獲得 !B! 點 格擋 或者 對自身造成 !BC! 點傷害"
+	},
+	"CM_BananaBarrier": {
+		"NAME": "香蕉屏障",
+		"DESCRIPTION": "獲得 !B! 點 格擋 。 NL 蕉爆 ( !BBC! ): 每有1點 香蕉精華 獲得 !BBB! 點 格擋"
+	},
+	"CM_FinalBoxingDance": {
+		"NAME": "最後的拳舞",
+		"DESCRIPTION": "這是 猴拳卡 。 NL 對所有敵人造成 !D! 點傷害。 NL 這場戰鬥每打出1張 猴拳卡 ，本卡基本傷害增加 !M!"
+	},
+	"CM_PotentialErupt": {
+		"NAME": "潛力爆發",
+		"DESCRIPTION": "獲得1點 力量 和 敏捷 。 NL 蕉爆 (?): 每 !M! 點 香蕉精華 轉換成 1點 力量 和 敏捷"
 	}
 }

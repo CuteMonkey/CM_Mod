@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import cm_mod.cards.Uppercut;
+import cm_mod.cards.MonkeyUppercut;
 import cm_mod.patches.AddPlayerClass;
 import cm_mod.patches.AddCardColor;
 import cm_mod.CMMod;
@@ -65,15 +65,15 @@ public class ClimbingMonkey extends CustomPlayer {
 		logger.info("Start to get starting deck.");
 		
 		ArrayList<String> retVal = new ArrayList<String>();
-		retVal.add("CM_Strike");
-		retVal.add("CM_Strike");
-		retVal.add("CM_Strike");
-		retVal.add("CM_Strike");
+		retVal.add("CM_MonkeyPunch");
+		retVal.add("CM_MonkeyPunch");
+		retVal.add("CM_MonkeyPunch");
+		retVal.add("CM_MonkeyPunch");
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
 		retVal.add("CM_Defend");
-		retVal.add("CM_Uppercut");
+		retVal.add("CM_MonkeyUppercut");
 		retVal.add("CM_WildIntuition");
 		return retVal;
 	}
@@ -137,7 +137,13 @@ public class ClimbingMonkey extends CustomPlayer {
 	}
 	
 	private static String setSPText() {
-		String retVal = "";
+		String retVal;
+		
+		if(Settings.language == Settings.GameLanguage.ENG) {
+			retVal = "You clench your fist...";
+		} else {
+			retVal = "你握緊你的拳頭...";
+		}
 		
 		return retVal;
 	}
@@ -165,7 +171,7 @@ public class ClimbingMonkey extends CustomPlayer {
 	public AbstractCard getStartCardForEvent() {
 		logger.info("Start to get start card for event.");
 		
-		return new Uppercut();
+		return new MonkeyUppercut();
 	}
 	
 	public Color getCardTrailColor() {

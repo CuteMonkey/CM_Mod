@@ -33,11 +33,12 @@ public class BananaReuse extends CMCard {
 	public BananaReuse() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AddCardColor.BANANA_COLOR,
 			CardRarity.UNCOMMON, CardTarget.SELF);
+		
 		this.baseMagicNumber = this.magicNumber = ABS_AMT;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		logger.info("Use BananaReuse. Magic numbers: " + this.baseMagicNumber + ", " + this.magicNumber);
+		logger.info("Apply " + this.magicNumber + " Auto Banana Shield to " + p.name + ".");
 		
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new AutoBananaShield(p, this.magicNumber),
 			this.magicNumber));

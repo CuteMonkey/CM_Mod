@@ -2,6 +2,12 @@
 	"keywords": [
 		{
 			"NAMES": [
+				"MP Card"
+			],
+			"DESCRIPTION": "A card of Monkey Pugilism series."
+		},
+		{
+			"NAMES": [
 				"Banana Burst"
 			],
 			"DESCRIPTION": "Consume Banana Essence to do extra actions."

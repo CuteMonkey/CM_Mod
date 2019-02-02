@@ -1,6 +1,7 @@
 package cm_mod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
+
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -52,7 +53,7 @@ public class BananaSapling extends AbstractPower {
 		roundCount--;
 		if(roundCount == 0) {
 			AbstractDungeon.actionManager.addToBottom(new GainBananaEssence((AbstractPlayer)this.owner,
-				this.amount, true, false));
+				this.amount, true));
 			roundCount = PRODUCE_INTERVAL;
 		}
 		

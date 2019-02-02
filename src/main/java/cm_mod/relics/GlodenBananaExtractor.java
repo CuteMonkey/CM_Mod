@@ -27,6 +27,11 @@ public class GlodenBananaExtractor extends CustomRelic {
 	}
 	
 	@Override
+	public boolean canSpawn() {
+		return !AbstractDungeon.player.hasRelic(this.relicId);
+	}
+	
+	@Override
 	public void obtain() {
 		if(AbstractDungeon.player.hasRelic("CM_BananaExtractor")) {
 			instantObtain(AbstractDungeon.player, 0, false);
@@ -40,7 +45,7 @@ public class GlodenBananaExtractor extends CustomRelic {
 		this.counter++;
 		if(this.counter == THRESHOLD) {
 			AbstractDungeon.actionManager.addToBottom(new GainBananaEssence(AbstractDungeon.player,
-				BE_GAIN_AMT, true, false));
+				BE_GAIN_AMT, true));
 			this.counter = 0;
 		}
 	}

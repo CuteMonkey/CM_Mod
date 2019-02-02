@@ -35,12 +35,14 @@ public class OverclockExtraction extends CMCard {
 	public OverclockExtraction() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AddCardColor.BANANA_COLOR,
 			CardRarity.UNCOMMON, CardTarget.SELF);
+		
 		this.BCurse = BGS_AMT;
 		this.baseMagicNumber = this.magicNumber = BFG_AMT;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		logger.info("Use OverclockExtractor. Magic numbers: " + this.baseMagicNumber + ", " + this.magicNumber);
+		logger.info("Apply " + this.BCurse + " Banana Gain Seal and " + this.magicNumber
+			+ " Banana Flame Gas to " + p.name + ".");
 		
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BananaGainSeal(p, this.BCurse),
 			this.BCurse));

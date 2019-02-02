@@ -2,6 +2,12 @@
 	"keywords": [
 		{
 			"NAMES": [
+				"猴拳卡"
+			],
+			"DESCRIPTION": "猴拳系列的卡。"
+		},
+		{
+			"NAMES": [
 				"蕉爆"
 			],
 			"DESCRIPTION": "消耗 香蕉精華 來進行額外行動。"

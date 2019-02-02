@@ -2,6 +2,11 @@ package cm_mod.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.cards.DamageInfo;
+
+import com.badlogic.gdx.math.MathUtils;
 
 import basemod.abstracts.CustomCard;
 
@@ -29,7 +34,7 @@ public abstract class CMCard extends CustomCard {
 	
 	public int BCurse = 0;
 	
-	protected void reseBBtAttributes() {
+	protected void resetBBAttributes() {
 		this.BBDamage = this.BBBaseDamage;
 		this.isBBDamageModified = false;
 		this.BBBlock = this.BBBaseBlock;
@@ -41,24 +46,27 @@ public abstract class CMCard extends CustomCard {
 		this.upgradedBBCost = true;
 	}
 	
-	protected void calculateBBDamage(AbstractPlayer p, AbstractMonster m) {
+	protected void calculateBBDamage(AbstractPlayer p, MonsterGroup mg) {
 		this.isBBDamageModified = false;
 		float temp = (float) this.BBBaseDamage;
 		
-		if(p.hasPower("Weakened")) {
-			this.isBBDamageModified = true;
-			temp *= 0.75f;
+		for(AbstractPower power : p.powers) {
+			temp = power.atDamageGive(temp, DamageInfo.DamageType.NORMAL);
 		}
-		if(m.hasPower("Vulnerable")) {
-			this.isBBDamageModified = true;
-			temp *= 1.5f;
-		}
-		if(p.hasPower("Strength")) {
-			this.isBBDamageModified = true;
-			temp += p.getPower("Strength").amount;
+		for(AbstractMonster m : mg.monsters) {
+			for(AbstractPower power : m.powers) {
+				temp = power.atDamageGive(temp, DamageInfo.DamageType.NORMAL);
+			}
 		}
 		
-		this.BBDamage = Math.round(temp);
+		if(this.BBBaseDamage != (int) temp) {
+			this.isBBDamageModified = true;
+		}
+		if(temp < 0.0f) {
+			temp = 0.0f;
+		}
+		
+		this.BBDamage = MathUtils.round(temp);
 	}
 	
 	protected void upgradeBBDamage(int delta) {
@@ -70,16 +78,18 @@ public abstract class CMCard extends CustomCard {
 		this.isBBBlockModified = false;
 		float temp = (float) this.BBBaseBlock;
 		
-		if(p.hasPower("Frail")) {
-			this.isBBBlockModified = true;
-			temp *= 0.75f;
-		}
-		if(p.hasPower("Dexterity")) {
-			this.isBBBlockModified = true;
-			temp += p.getPower("Dexterity").amount;
+		for(AbstractPower power : p.powers) {
+			temp = power.modifyBlock(temp);
 		}
 		
-		this.BBBlock = Math.round(temp);
+		if(this.BBBaseBlock != (int) temp) {
+			this.isBBBlockModified = true;
+		}
+		if(temp < 0.0f) {
+			temp = 0.0f;
+		}
+		
+		this.BBBlock = MathUtils.round(temp);
 	}
 	
 	protected void upgradeBBBlock(int delta) {
