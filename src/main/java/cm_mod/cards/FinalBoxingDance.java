@@ -22,7 +22,7 @@ public class FinalBoxingDance extends CMCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/no_image.png";
 	
-	private static final int COST = 2;
+	private static final int COST = 3;
 	private static final int ATTACK_DMG = 6;
 	private static final int DMG_INCREASE = 2;
 	private static final int UPGRADE_PLUS_INCREASE = 1;
@@ -38,7 +38,7 @@ public class FinalBoxingDance extends CMCard {
 	}
 	
 	@Override
-	public void triggerOnOtherCardPlayed(AbstractCard c) {
+	public void triggerOnCardPlayed(AbstractCard c) {
 		if(c.hasTag(AddCardTags.MONKEY_PUGILISM)) {
 			AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid,
 				this.magicNumber));

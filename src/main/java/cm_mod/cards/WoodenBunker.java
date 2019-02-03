@@ -41,9 +41,9 @@ public class WoodenBunker extends CMCard {
 		
 		if(isBEEnough(p)) {
 			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
-			calculateBBBlock(AbstractDungeon.player);
+			
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.BBBlock));
-			resetAttributes();
+			resetBBAttributes();
 		}
 	}
 	

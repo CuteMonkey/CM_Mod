@@ -54,7 +54,7 @@ public class SerialMonkeyJab extends CMCard {
 		
 		if(isBEEnough(p)) {
 			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
-			calculateBBDamage(AbstractDungeon.player, AbstractDungeon.getMonsters());
+			
 			for(int i = 0; i < this.BBMagic; i++) {
 				AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p,
 					this.BBDamage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));

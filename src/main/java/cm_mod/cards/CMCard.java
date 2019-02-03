@@ -1,6 +1,7 @@
 package cm_mod.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -8,9 +9,16 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 
 import com.badlogic.gdx.math.MathUtils;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import basemod.abstracts.CustomCard;
 
+import cm_mod.CMMod;
+
 public abstract class CMCard extends CustomCard {
+	public static final Logger logger = LogManager.getLogger(CMMod.class.getName());
+	
 	public CMCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color,
 		CardRarity rarity, CardTarget target) {
 		super(id, name, img, cost, rawDescription, type, color, rarity, target);
@@ -69,8 +77,13 @@ public abstract class CMCard extends CustomCard {
 		this.BBDamage = MathUtils.round(temp);
 	}
 	
+	protected void calculateBBDamage(AbstractPlayer p, AbstractMonster m) {
+		MonsterGroup singleMonster = new MonsterGroup(m);
+		calculateBBDamage(p, singleMonster);
+	}
+	
 	protected void upgradeBBDamage(int delta) {
-		this.baseDamage += delta;
+		this.BBBaseDamage += delta;
 		this.upgradedBBDamage = true;
 	}
 	
@@ -93,7 +106,7 @@ public abstract class CMCard extends CustomCard {
 	}
 	
 	protected void upgradeBBBlock(int delta) {
-		this.baseBlock += delta;
+		this.BBBaseBlock += delta;
 		this.upgradedBBBlock = true;
 	}
 	
@@ -109,5 +122,20 @@ public abstract class CMCard extends CustomCard {
 			}
 		}
 		return false;
+	}
+	
+	
+	@Override
+	public void calculateCardDamage(AbstractMonster mo) {
+		AbstractPlayer p = AbstractDungeon.player;
+		
+		if((this.target == CardTarget.ENEMY) || (this.target == CardTarget.SELF_AND_ENEMY)) {
+			calculateBBDamage(p, mo);
+		} else {
+			calculateBBDamage(p, AbstractDungeon.getMonsters());
+		}
+		calculateBBBlock(p);
+		
+		super.calculateCardDamage(mo);
 	}
 }
