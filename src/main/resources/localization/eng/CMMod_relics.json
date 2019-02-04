@@ -3,8 +3,8 @@
 		"NAME": "Banana Extractor",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"Every you play ", 
-			" cards, gain ",
+			"Every you collect ", 
+			" Banana Point, gain ",
 			" Banana Essence in each battle."
 		]
 	},
@@ -12,8 +12,8 @@
 		"NAME": "Golden Banana Extractor",
 		"FLAVOR": "",
 		"DESCRIPTIONS": [
-			"Every you play ", 
-			" cards, gain ",
+			"Every you collect ", 
+			" Banana Point, gain ",
 			" Banana Essence in each battle."
 		]
 	}

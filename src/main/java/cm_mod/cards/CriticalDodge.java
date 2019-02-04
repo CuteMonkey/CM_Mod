@@ -38,7 +38,7 @@ public class CriticalDodge extends CMCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
 			if(!monster.isDead && !monster.isDying) {
-				if(MathUtils.random(1, 1000) < 250) {
+				if(MathUtils.random(1, 1000) < 300) {
 					AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.BCurse));
 				} else {
 					AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));

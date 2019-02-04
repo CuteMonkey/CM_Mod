@@ -60,6 +60,10 @@ public class SerialMonkeyJab extends CMCard {
 					this.BBDamage), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 			}
 			resetBBAttributes();
+			
+			this.didBurst = true;
+		} else {
+			this.didBurst = false;
 		}
 	}
 	

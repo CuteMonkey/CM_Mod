@@ -8,14 +8,17 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomRelic;
 
+import cm_mod.cards.CMCard;
+import cm_mod.patches.AddCardColor;
 import cm_mod.actions.GainBananaEssence;
 
 public class GlodenBananaExtractor extends CustomRelic {
 	public static final String ID = "CM_GlodenBananaExtractor";
 	public static final String IMG = "img/relics/gloden_banana_extractor.png";
 	
-	private static final int THRESHOLD = 4;
+	private static final int BP_THRESHOLD = 8;
 	private static final int BE_GAIN_AMT = 2;
+	private int increase = 0;
 	
 	public GlodenBananaExtractor() {
 		super(ID, ImageMaster.loadImage(IMG), AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.MAGICAL);
@@ -23,7 +26,7 @@ public class GlodenBananaExtractor extends CustomRelic {
 	
 	@Override
 	public String getUpdatedDescription() {
-		return DESCRIPTIONS[0] + THRESHOLD + DESCRIPTIONS[1] + BE_GAIN_AMT + DESCRIPTIONS[2];
+		return DESCRIPTIONS[0] + BP_THRESHOLD + DESCRIPTIONS[1] + BE_GAIN_AMT + DESCRIPTIONS[2];
 	}
 	
 	@Override
@@ -42,11 +45,21 @@ public class GlodenBananaExtractor extends CustomRelic {
 	
 	@Override
 	public void onUseCard(AbstractCard card, UseCardAction action) {
-		this.counter++;
-		if(this.counter == THRESHOLD) {
+		if((card.color == AddCardColor.BANANA_COLOR) && ((CMCard) card).didBurst) {
+			increase = 3;
+		} else {
+			increase = 2;
+		}
+		
+		if(AbstractDungeon.player.hasPower("CM_BananaBlessing")) {
+			increase *= 2;
+		}
+		
+		this.counter += increase;
+		if(this.counter >= BP_THRESHOLD) {
 			AbstractDungeon.actionManager.addToBottom(new GainBananaEssence(AbstractDungeon.player,
 				BE_GAIN_AMT, true));
-			this.counter = 0;
+			this.counter -= BP_THRESHOLD;
 		}
 	}
 	

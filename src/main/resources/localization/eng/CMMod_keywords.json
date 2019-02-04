@@ -8,6 +8,12 @@
 		},
 		{
 			"NAMES": [
+				"Banana Point"
+			],
+			"DESCRIPTION": "Get 2 points when play card normally, and get 3 points when do Banana Burst."
+		},
+		{
+			"NAMES": [
 				"Banana Burst"
 			],
 			"DESCRIPTION": "Consume Banana Essence to do extra actions."
@@ -47,6 +53,12 @@
 				"Banana Gain Seal"
 			],
 			"DESCRIPTION": "Can not gain Banana Essence in a given period of time."
+		},
+		{
+			"NAMES": [
+				"Banana Blessing"
+			],
+			"DESCRIPTION": "Double the gain of Banana Point in a given period of time."
 		}
 	]
 }

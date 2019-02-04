@@ -13,16 +13,25 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.ModalChoice;
 
 import cm_mod.CMMod;
 
-public abstract class CMCard extends CustomCard {
+public abstract class CMCard extends CustomCard implements ModalChoice.Callback {
 	public static final Logger logger = LogManager.getLogger(CMMod.class.getName());
 	
 	public CMCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color,
 		CardRarity rarity, CardTarget target) {
 		super(id, name, img, cost, rawDescription, type, color, rarity, target);
 	}
+	
+	protected ModalChoice monkeyCardChoice;
+	
+	public void optionSelected(AbstractPlayer p, AbstractMonster m, int index) {
+		
+	}
+	
+	public boolean didBurst = false;
 	
 	public int BBCost = 0;
 	public boolean upgradedBBCost = false;
@@ -122,6 +131,10 @@ public abstract class CMCard extends CustomCard {
 			}
 		}
 		return false;
+	}
+	
+	protected void modifyBCurse(int newBCurse) {
+		this.BCurse = newBCurse;
 	}
 	
 	

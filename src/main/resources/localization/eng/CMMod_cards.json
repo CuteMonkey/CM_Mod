@@ -66,6 +66,19 @@
 	},
 	"CM_PotentialErupt": {
 		"NAME": "Potential Erupt",
-		"DESCRIPTION": "Gain 1 Strength and Dexterity. NL Banana Burst (?): Every !M! Banana Essence transform 1 Strength and Dexterity."
+		"DESCRIPTION": "Gain 1 Strength and Dexterity. NL Banana Burst (?): Every !BBC! Banana Essence transform 1 Strength and Dexterity, and gain !BC! Banana Gain Seal."
+	},
+	"CM_BananaCan": {
+		"NAME": "Banana Can",
+		"DESCRIPTION": "Gain !M! Banana Essence. Exhaust."
+	},
+	"CM_BananaAmulet": {
+		"NAME": "Banana Amulet",
+		"DESCRIPTION": "Gain !M! Banana Blessing."
+	},
+	"CM_BEConversion": {
+		"NAME": "Banana-Energy Conversion",
+		"DESCRIPTION": "Each time Banana Consumption (1): Gain [E] , at most 3 times.",
+		"UPGRADE_DESCRIPTION": "Each time Banana Consumption (1): Gain [E] [E] , at most twice."
 	}
 }

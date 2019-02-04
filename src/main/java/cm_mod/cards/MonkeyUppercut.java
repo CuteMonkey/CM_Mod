@@ -51,13 +51,17 @@ public class MonkeyUppercut extends CMCard {
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage,
 			this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber,
-			false), this.magicNumber, true));
+			false), this.magicNumber));
 		
-		//action of banana burst
 		if(isBEEnough(p)) {
 			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
+			
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.BBMagic,
 				false), this.BBMagic));
+			
+			this.didBurst = true;
+		} else {
+			this.didBurst = false;
 		}
 	}
 	

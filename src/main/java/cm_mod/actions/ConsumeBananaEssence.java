@@ -24,7 +24,7 @@ public class ConsumeBananaEssence extends AbstractGameAction {
 				int consumeBEAmt = this.amount;
 				int ABSAmt = this.target.getPower("CM_AutoBananaShield").amount;
 				for(int i = 0; i < consumeBEAmt; i++) {
-					AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.target, this.source,
+					AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.target, this.target,
 						ABSAmt, true));
 				}
 			}

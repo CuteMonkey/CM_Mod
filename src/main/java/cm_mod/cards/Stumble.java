@@ -52,6 +52,10 @@ public class Stumble extends CMCard {
 						new VulnerablePower(monster, this.BBMagic, false), this.BBMagic));
 				}
 			}
+			
+			this.didBurst = true;
+		} else {
+			this.didBurst = false;
 		}
 	}
 	

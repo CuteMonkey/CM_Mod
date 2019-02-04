@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import cm_mod.cards.CMCard;
 import cm_mod.patches.AddCardColor;
 import cm_mod.actions.ConsumeBananaEssence;
+import cm_mod.powers.BananaGainSeal;
 
 public class PotentialErupt extends CMCard {
 	public static final String ID = "CM_PotentialErupt";
@@ -24,8 +25,10 @@ public class PotentialErupt extends CMCard {
 	
 	private static final int COST = 2;
 	private static final int DUAL_POWER_AMT = 1;
-	private static final int BB_COST = 3;
-	private static final int UPGRADE_BB_COST = 2;
+	private static final int BB_COST = 2;
+	private static final int UPGRADE_BB_COST = 1;
+	private static final int BGS_AMT = 2;
+	private static final int UPGRADE_BGS = 3;
 	
 	public PotentialErupt() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AddCardColor.BANANA_COLOR,
@@ -33,6 +36,7 @@ public class PotentialErupt extends CMCard {
 		
 		this.baseMagicNumber = this.magicNumber = DUAL_POWER_AMT;
 		this.BBCost = BB_COST;
+		this.BCurse = BGS_AMT;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -50,6 +54,12 @@ public class PotentialErupt extends CMCard {
 				p, BBDualLayer), BBDualLayer));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(
 				p, BBDualLayer), BBDualLayer));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BananaGainSeal(
+				p, this.BCurse), this.BCurse));
+			
+			this.didBurst = true;
+		} else {
+			this.didBurst = false;
 		}
 	}
 	
@@ -61,6 +71,7 @@ public class PotentialErupt extends CMCard {
 		if(!this.upgraded) {
 			upgradeName();
 			upgradeBBCost(UPGRADE_BB_COST);
+			modifyBCurse(UPGRADE_BGS);
 		}
 	}
 }

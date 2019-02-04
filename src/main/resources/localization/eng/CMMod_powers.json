@@ -35,5 +35,12 @@
 			"You can not gain Banana Essence within ",
 			" rounds."
 		]
+	},
+	"CM_BananaBlessing": {
+		"NAME": "Banana Blessing",
+		"DESCRIPTIONS": [
+			"You gain double Banana Point within ",
+			" rounds."
+		]
 	}
 }

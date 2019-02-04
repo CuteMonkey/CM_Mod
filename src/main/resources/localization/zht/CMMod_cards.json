@@ -66,6 +66,19 @@
 	},
 	"CM_PotentialErupt": {
 		"NAME": "潛力爆發",
-		"DESCRIPTION": "獲得1點 力量 和 敏捷 。 NL 蕉爆 (?): 每 !M! 點 香蕉精華 轉換成 1點 力量 和 敏捷"
+		"DESCRIPTION": "獲得1點 力量 和 敏捷 。 NL 蕉爆 (?): 每 !BBC! 點 香蕉精華 轉換成1點 力量 和 敏捷 ，獲得 !BC! 層 香蕉獲取封印"
+	},
+	"CM_BananaCan": {
+		"NAME": "香蕉罐頭",
+		"DESCRIPTION": "獲得 !M! 點 香蕉精華 。 消耗"
+	},
+	"CM_BananaAmulet": {
+		"NAME": "香蕉護身符",
+		"DESCRIPTION": "獲得 !M! 層 香蕉祝福"
+	},
+	"CM_BEConversion": {
+		"NAME": "蕉能轉換",
+		"DESCRIPTION": "每次 耗蕉 (1): 獲得 [E] ，最多3次",
+		"UPGRADE_DESCRIPTION": "每次 耗蕉(1): 獲得 [E] [E] ，最多2次"
 	}
 }

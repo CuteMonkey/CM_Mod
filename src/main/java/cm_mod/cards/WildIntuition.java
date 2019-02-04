@@ -43,6 +43,10 @@ public class WildIntuition extends CMCard {
 		if(isBEEnough(p)) {
 			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.BBMagic));
+			
+			this.didBurst = true;
+		} else {
+			this.didBurst = false;
 		}
 	}
 	

@@ -1,10 +1,12 @@
 package cm_mod.actions;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 
 import cm_mod.powers.BananaEssence;
 
@@ -24,6 +26,16 @@ public class GainBananaEssence extends AbstractGameAction {
 		if(!this.target.hasPower("CM_BananaGainSeal")) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source,
 				new BananaEssence(this.target, this.amount), this.amount, this.isFast));
+			
+			if(this.target.hasPower("CM_BananaFlameGas")) {
+				int gainBEAmt = this.amount;
+				int BFGAmt = this.target.getPower("CM_BananaFlameGas").amount;
+				for(int i = 0; i < gainBEAmt; i++) {
+					AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(
+						new DamageInfo(this.target, BFGAmt, DamageInfo.DamageType.NORMAL),
+						AbstractGameAction.AttackEffect.FIRE));
+				}
+			}
 		}
 		
 		this.isDone = true;

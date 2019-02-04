@@ -23,7 +23,7 @@ public class BananaBarrier extends CMCard {
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 4;
 	private static final int UPGRADE_PLUS_BLOCK = 2;
-	private static final int BB_COST = 2;
+	private static final int BB_COST = 1;
 	private static final int BB_BLOCK_AMT = 2;
 	private static final int UPGRADE_BB_PLUS_BLOCK = 1;
 	
@@ -41,9 +41,14 @@ public class BananaBarrier extends CMCard {
 		
 		if(isBEEnough(p)) {
 			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
+			
 			resetBBAttributes();
 			int blockIncrease = p.getPower("CM_BananaEssence").amount * this.BBBlock;
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, blockIncrease));
+			
+			this.didBurst = true;
+		} else {
+			this.didBurst = false;
 		}
 	}
 	
