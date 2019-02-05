@@ -23,9 +23,9 @@ public class BananaMeal extends CMCard {
 	private static final int COST = 0;
 	private static final int RECOVER_BE_COST_1 = 2;
 	private static final int RECOVER_BE_COST_2 = 1;
-	private static final int HP_RECOVER_1 = 16;
+	private static final int HP_RECOVER_1 = 15;
 	private static final int HP_RECOVER_2 = 7;
-	private static final int UPGRADE_PLUS_RECOVER_1 = 6;
+	private static final int UPGRADE_PLUS_RECOVER_1 = 7;
 	private static final int UPGRADE_PLUS_RECOVER_2 = 3;
 	
 	public BananaMeal() {

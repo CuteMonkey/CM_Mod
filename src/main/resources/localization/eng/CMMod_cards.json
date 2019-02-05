@@ -80,5 +80,19 @@
 		"NAME": "Banana-Energy Conversion",
 		"DESCRIPTION": "Each time Banana Consumption (1): Gain [E] , at most 3 times.",
 		"UPGRADE_DESCRIPTION": "Each time Banana Consumption (1): Gain [E] [E] , at most twice."
+	},
+	"CM_UltraBananaAttack": {
+		"NAME": "Ultra Banana Attack",
+		"DESCRIPTION": "Deal !D! plus !M! times of the number of Banana Burst damage in this battle.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (Deal !BBD! damage.)"
+		]
+	},
+	"CM_UltraBananaDefend": {
+		"NAME": "Ultra Banana Defend",
+		"DESCRIPTION": "Gain !B! plus !M! times of the number of Banana Burst Block in this battle.",
+		"EXTENDED_DESCRIPTION": [
+			" NL (Gain !BBB! Block.)"
+		]
 	}
 }

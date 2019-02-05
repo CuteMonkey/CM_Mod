@@ -185,6 +185,8 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		//rare cards
 		BaseMod.addCard(new PlantBananaTree());
 		BaseMod.addCard(new PotentialErupt());
+		BaseMod.addCard(new UltraBananaAttack());
+		BaseMod.addCard(new UltraBananaDefend());
 		
 		//dynamic variables
 		BaseMod.addDynamicVariable(new BananaBurstCost());

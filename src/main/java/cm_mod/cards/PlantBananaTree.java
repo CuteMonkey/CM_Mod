@@ -24,7 +24,7 @@ public class PlantBananaTree extends CMCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-	public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+	public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/plant_banana_tree.png";
 	
 	private static final int COST = 2;
@@ -52,7 +52,7 @@ public class PlantBananaTree extends CMCard {
 		if(!this.upgraded) {
 			upgradeName();
 			this.isInnate = true;
-			this.rawDescription = UPGRADE_DESCRIPTION;
+			this.rawDescription = EXTENDED_DESCRIPTION[0] + DESCRIPTION;
 			initializeDescription();
 		}
 	}

@@ -26,7 +26,9 @@
 	"CM_PlantBananaTree": {
 		"NAME": "種香蕉樹",
 		"DESCRIPTION": "獲得 !M! 點 香蕉樹苗",
-		"UPGRADE_DESCRIPTION": "固有 。 NL 獲得 !M! 點 香蕉樹苗"
+		"EXTENDED_DESCRIPTION": [
+			"固有 。 NL "
+		]
 	},
 	"CM_BananaReuse": {
 		"NAME": "香蕉再利用",
@@ -80,5 +82,19 @@
 		"NAME": "蕉能轉換",
 		"DESCRIPTION": "每次 耗蕉 (1): 獲得 [E] ，最多3次",
 		"UPGRADE_DESCRIPTION": "每次 耗蕉(1): 獲得 [E] [E] ，最多2次"
+	},
+	"CM_UltraBananaAttack": {
+		"NAME": "超香蕉攻擊",
+		"DESCRIPTION": "造成 !D! 加上 !M! 倍這場戰鬥中 蕉爆 次數的傷害",
+		"EXTENDED_DESCRIPTION": [
+			" NL (造成 !BBD! 點傷害)"
+		]
+	},
+	"CM_UltraBananaDefend": {
+		"NAME": "超香蕉防禦",
+		"DESCRIPTION": "獲得 !B! 加上 !M! 倍這場戰鬥中 蕉爆 次數的 格擋",
+		"EXTENDED_DESCRIPTION": [
+			" NL (獲得 !BBB! 點 格擋)"
+		]
 	}
 }

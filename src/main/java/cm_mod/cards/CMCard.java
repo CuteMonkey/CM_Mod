@@ -72,7 +72,7 @@ public abstract class CMCard extends CustomCard implements ModalChoice.Callback 
 		}
 		for(AbstractMonster m : mg.monsters) {
 			for(AbstractPower power : m.powers) {
-				temp = power.atDamageGive(temp, DamageInfo.DamageType.NORMAL);
+				temp = power.atDamageReceive(temp, DamageInfo.DamageType.NORMAL);
 			}
 		}
 		
