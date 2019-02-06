@@ -46,6 +46,12 @@ public class SerialMonkeyJab extends CMCard {
 		this.BBMagic = BB_ATTACK_NUMBER;
 	}
 	
+	@Override
+	public void calculateCardDamage(AbstractMonster mo) {
+		calculateMonkeyCardDamage(mo);
+		super.calculateCardDamage(mo);
+	}
+	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for(int i = 0; i < this.magicNumber; i++) {
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p,

@@ -94,5 +94,13 @@
 		"EXTENDED_DESCRIPTION": [
 			" NL (Gain !BBB! Block.)"
 		]
+	},
+	"CM_HeavyMonkeyPunch": {
+		"NAME": "Heavy Monkey Punch",
+		"DESCRIPTION": "This is a MP Card. NL Deal !D! damage and give !M! Weak and Vulnerable. NL Banana Burst ( !BBC! ): Deal !BBD! damage and give !BBM! Weak and Vulnerable."
+	},
+	"CM_WorkReinforcement": {
+		"NAME": "Work Reinforcement",
+		"DESCRIPTION": "Maintain Block in next !M! rounds. NL Banana Burst ( !BBC! ): Gain !BBB! Block."
 	}
 }

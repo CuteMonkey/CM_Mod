@@ -23,9 +23,9 @@ public class FinalBoxingDance extends CMCard {
 	public static final String IMG_PATH = "img/cards/final_boxing_dance.png";
 	
 	private static final int COST = 3;
-	private static final int ATTACK_DMG = 6;
+	private static final int ATTACK_DMG = 7;
 	private static final int UPGRADE_PLUS_DMG = 2;
-	private static final int DMG_INCREASE = 4;
+	private static final int DMG_INCREASE = 3;
 	private static final int UPGRADE_PLUS_INCREASE = 1;
 	
 	public FinalBoxingDance() {

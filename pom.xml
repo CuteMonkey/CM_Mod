@@ -3,7 +3,7 @@
 
     <groupId>cm_mod</groupId>
     <artifactId>CMMod</artifactId>
-    <version>v1.1.1</version>
+    <version>v1.1.2</version>
     <packaging>jar</packaging>
 
     <name>CMMod</name>

@@ -96,5 +96,13 @@
 		"EXTENDED_DESCRIPTION": [
 			" NL (獲得 !BBB! 點 格擋)"
 		]
+	},
+	"CM_HeavyMonkeyPunch": {
+		"NAME": "重猴拳",
+		"DESCRIPTION": "這是 猴拳卡 。 NL 造成 !D! 點傷害並給予 !M! 層 虛弱 和 易傷 。 NL 蕉爆 ( !BBC! ): 造成 !BBD! 點傷害並給予 !BBM! 層 虛弱 和 易傷"
+	},
+	"CM_WorkReinforcement": {
+		"NAME": "工事補強",
+		"DESCRIPTION": "格擋 持續 !M! 回合。 NL 蕉爆 ( !BBC! ): 獲得 !BBB! 點 格擋"
 	}
 }

@@ -137,9 +137,7 @@ public abstract class CMCard extends CustomCard implements ModalChoice.Callback 
 		this.BCurse = newBCurse;
 	}
 	
-	
-	@Override
-	public void calculateCardDamage(AbstractMonster mo) {
+	public void calculateMonkeyCardDamage(AbstractMonster mo) {
 		AbstractPlayer p = AbstractDungeon.player;
 		
 		if((this.target == CardTarget.ENEMY) || (this.target == CardTarget.SELF_AND_ENEMY)) {
@@ -148,7 +146,5 @@ public abstract class CMCard extends CustomCard implements ModalChoice.Callback 
 			calculateBBDamage(p, AbstractDungeon.getMonsters());
 		}
 		calculateBBBlock(p);
-		
-		super.calculateCardDamage(mo);
 	}
 }

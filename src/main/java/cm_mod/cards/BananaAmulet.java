@@ -20,7 +20,7 @@ public class BananaAmulet extends CMCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	public static final String IMG_PATH = "img/cards/banana_amulet.png";
 	
-	private static final int COST = 2;
+	private static final int COST = 1;
 	private static final int BBlessing_AMT = 2;
 	private static final int UPGRADE_PLUS_BBlessing = 1;
 	
