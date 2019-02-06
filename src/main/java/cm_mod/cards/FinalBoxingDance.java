@@ -24,7 +24,8 @@ public class FinalBoxingDance extends CMCard {
 	
 	private static final int COST = 3;
 	private static final int ATTACK_DMG = 6;
-	private static final int DMG_INCREASE = 2;
+	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int DMG_INCREASE = 4;
 	private static final int UPGRADE_PLUS_INCREASE = 1;
 	
 	public FinalBoxingDance() {
@@ -57,6 +58,7 @@ public class FinalBoxingDance extends CMCard {
 	public void upgrade() {
 		if(!this.upgraded ) {
 			upgradeName();
+			upgradeDamage(UPGRADE_PLUS_DMG);
 			upgradeMagicNumber(UPGRADE_PLUS_INCREASE);
 		}
 	}

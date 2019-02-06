@@ -29,7 +29,7 @@ public class CriticalDodge extends CMCard {
 	
 	public CriticalDodge() {
 		super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AddCardColor.BANANA_COLOR,
-			CardRarity.COMMON, CardTarget.ALL);
+			CardRarity.COMMON, CardTarget.SELF);
 		
 		this.baseBlock = this.block = BLOCK_AMT;
 		this.BCurse = SELF_DMG;
@@ -38,7 +38,7 @@ public class CriticalDodge extends CMCard {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		for(AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
 			if(!monster.isDead && !monster.isDying) {
-				if(MathUtils.random(1, 1000) < 300) {
+				if(MathUtils.random(1, 1000) < 280) {
 					AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.BCurse));
 				} else {
 					AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
