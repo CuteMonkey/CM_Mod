@@ -35,13 +35,13 @@ public class MagicalBanana extends CMCard {
 		int result = MathUtils.random(1, 1000);
 		
 		if(this.upgraded) {
-			if(result <= 100) {
+			if(result <= 80) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(
 					p, 1), 1));
-			} else if((100 < result) && (result <= 500)) {
+			} else if((80 < result) && (result <= 500)) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(
 					p, 2), 2));
-			} else if((500 < result) && (result <= 900)) {
+			} else if((500 < result) && (result <= 920)) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(
 					p, 2), 2));
 			} else {
