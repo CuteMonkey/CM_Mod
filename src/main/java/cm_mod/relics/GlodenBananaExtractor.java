@@ -64,7 +64,7 @@ public class GlodenBananaExtractor extends CustomRelic {
 	}
 	
 	@Override
-	public void atBattleStart() {
+	public void onVictory() {
 		this.counter = 0;
 	}
 	

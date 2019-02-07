@@ -67,6 +67,7 @@ public class HeavyMonkeyPunch extends CMCard {
 			
 			AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.BBDamage),
 				AbstractGameAction.AttackEffect.SMASH));
+			resetBBAttributes();
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, this.BBMagic,
 				false), this.BBMagic));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m,

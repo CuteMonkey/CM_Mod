@@ -175,6 +175,7 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new CriticalDodge());
 		BaseMod.addCard(new BananaCan());
 		BaseMod.addCard(new BEConversion());
+		BaseMod.addCard(new MagicalBanana());
 		//uncommon cards
 		BaseMod.addCard(new BananaMeal());
 		BaseMod.addCard(new BananaReuse());

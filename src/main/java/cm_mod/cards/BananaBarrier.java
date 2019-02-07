@@ -36,12 +36,6 @@ public class BananaBarrier extends CMCard {
 		this.BBBaseBlock = BB_BLOCK_AMT;
 	}
 	
-	@Override
-	public void calculateCardDamage(AbstractMonster mo) {
-		calculateMonkeyCardDamage(mo);
-		super.calculateCardDamage(mo);
-	}
-	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 		

@@ -52,6 +52,7 @@ public class WorkReinforcement extends CMCard {
 			AbstractDungeon.actionManager.addToBottom(new ConsumeBananaEssence(p, this.BBCost));
 			
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.BBBlock));
+			resetBBAttributes();
 			
 			this.didBurst = true;
 		} else {

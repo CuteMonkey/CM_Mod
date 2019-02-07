@@ -102,5 +102,10 @@
 	"CM_WorkReinforcement": {
 		"NAME": "Work Reinforcement",
 		"DESCRIPTION": "Maintain Block in next !M! rounds. NL Banana Burst ( !BBC! ): Gain !BBB! Block."
+	},
+	"CM_MagicalBanana": {
+		"NAME": "Magical Banana",
+		"DESCRIPTION": "Gain 1 Strength or Dexterity.",
+		"UPGRADE_DESCRIPTION": "Gain 1 or 2 Strength or Dexterity."
 	}
 }

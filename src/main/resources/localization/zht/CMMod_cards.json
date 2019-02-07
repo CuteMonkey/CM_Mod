@@ -103,6 +103,11 @@
 	},
 	"CM_WorkReinforcement": {
 		"NAME": "工事補強",
-		"DESCRIPTION": "格擋 持續 !M! 回合。 NL 蕉爆 ( !BBC! ): 獲得 !BBB! 點 格擋"
+		"DESCRIPTION": "格擋 持續到下 !M! 回合。 NL 蕉爆 ( !BBC! ): 獲得 !BBB! 點 格擋"
+	},
+	"CM_MagicalBanana": {
+		"NAME": "魔法香蕉",
+		"DESCRIPTION": "獲得1點 力量 或 敏捷",
+		"UPGRADE_DESCRIPTION": "獲得1或2點 力量 或 敏捷"
 	}
 }
