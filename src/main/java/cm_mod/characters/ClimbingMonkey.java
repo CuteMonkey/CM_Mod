@@ -3,6 +3,7 @@ package cm_mod.characters;
 import java.util.ArrayList;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
@@ -240,6 +241,18 @@ public class ClimbingMonkey extends CustomPlayer {
 		if(CMMod.nextStartingBE > 0) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BananaEssence(
 				this, CMMod.nextStartingBE), CMMod.nextStartingBE, true));
+		}
+	}
+	
+	@Override
+	public void renderHand(SpriteBatch sb) {
+		super.renderHand(sb);
+		
+		AbstractCard currHoverCard = this.hoveredCard;
+		if(this.isDraggingCard && (currHoverCard != null) && (currHoverCard.color == AddCardColor.BANANA_COLOR) &&
+			(currHoverCard.target == AbstractCard.CardTarget.SELF)) {
+			currHoverCard.calculateCardDamage(null);
+			currHoverCard.render(sb);
 		}
 	}
 }
