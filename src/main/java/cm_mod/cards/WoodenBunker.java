@@ -22,7 +22,7 @@ public class WoodenBunker extends CMCard {
 	
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 6;
-	private static final int UPGRADE_PLUS_BLOCK = 2;
+	private static final int UPGRADE_PLUS_BLOCK = 3;
 	private static final int BB_COST = 1;
 	private static final int BB_BLOCK_AMT = 5;
 	private static final int UPGRADE_BB_PLUS_BLOCK = 2;
@@ -38,7 +38,7 @@ public class WoodenBunker extends CMCard {
 	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
-		calculateMonkeyCardDamage(mo);
+		calculateBBBlock(AbstractDungeon.player);
 		super.calculateCardDamage(mo);
 	}
 	

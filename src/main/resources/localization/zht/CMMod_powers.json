@@ -2,7 +2,7 @@
 	"CM_BananaEssence": {
 		"NAME": "香蕉精華",
 		"DESCRIPTIONS": [
-			"從香蕉中萃取的精髓，能激發猴子的潛能。"
+			"從香蕉中萃取的精髓，能激發猴子的潛能。\n戰鬥結束後消耗5點。"
 		]
 	},
 	"CM_BananaSapling": {

@@ -15,6 +15,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +25,7 @@ import cm_mod.cards.MonkeyUppercut;
 import cm_mod.patches.AddPlayerClass;
 import cm_mod.patches.AddCardColor;
 import cm_mod.CMMod;
+import cm_mod.powers.BananaEssence;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -228,5 +231,15 @@ public class ClimbingMonkey extends CustomPlayer {
 	
 	public String getVampireText() {
 		return com.megacrit.cardcrawl.events.city.Vampires.DESCRIPTIONS[0];
+	}
+	
+	@Override
+	public void preBattlePrep() {
+		super.preBattlePrep();
+		
+		if(CMMod.nextStartingBE > 0) {
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new BananaEssence(
+				this, CMMod.nextStartingBE), CMMod.nextStartingBE, true));
+		}
 	}
 }

@@ -51,14 +51,4 @@ public class BananaBlessing extends AbstractPower {
 			updateDescription();
 		}
 	}
-	
-	@Override
-	public void onDeath() {
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-	}
-	
-	@Override
-	public void onVictory() {
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-	}
 }

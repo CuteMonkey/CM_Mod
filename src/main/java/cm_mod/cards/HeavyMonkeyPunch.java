@@ -50,7 +50,7 @@ public class HeavyMonkeyPunch extends CMCard {
 	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
-		calculateMonkeyCardDamage(mo);
+		calculateBBDamage(AbstractDungeon.player, mo);
 		super.calculateCardDamage(mo);
 	}
 	

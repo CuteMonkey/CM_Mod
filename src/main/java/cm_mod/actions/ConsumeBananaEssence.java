@@ -30,7 +30,7 @@ public class ConsumeBananaEssence extends AbstractGameAction {
 			}
 			
 			if(this.target.getPower("CM_BananaEssence").amount == 0) {
-				AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.source,
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source,
 					"CM_BananaEssence"));
 			}
 		}

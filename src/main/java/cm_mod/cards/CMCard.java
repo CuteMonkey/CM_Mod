@@ -1,7 +1,6 @@
 package cm_mod.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -135,16 +134,5 @@ public abstract class CMCard extends CustomCard implements ModalChoice.Callback 
 	
 	protected void modifyBCurse(int newBCurse) {
 		this.BCurse = newBCurse;
-	}
-	
-	public void calculateMonkeyCardDamage(AbstractMonster mo) {
-		AbstractPlayer p = AbstractDungeon.player;
-		
-		if((this.target == CardTarget.ENEMY) || (this.target == CardTarget.SELF_AND_ENEMY)) {
-			calculateBBDamage(p, mo);
-		} else {
-			calculateBBDamage(p, AbstractDungeon.getMonsters());
-		}
-		calculateBBBlock(p);
 	}
 }

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 
 import cm_mod.actions.GainBananaEssence;;
 
@@ -58,17 +57,5 @@ public class BananaSapling extends AbstractPower {
 		}
 		
 		updateDescription();
-	}
-	
-	@Override
-	public void onDeath() {
-		roundCount = PRODUCE_INTERVAL;
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-	}
-	
-	@Override
-	public void onVictory() {
-		roundCount = PRODUCE_INTERVAL;
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
 	}
 }

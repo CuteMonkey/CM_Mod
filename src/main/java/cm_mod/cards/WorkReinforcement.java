@@ -40,7 +40,7 @@ public class WorkReinforcement extends CMCard {
 	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
-		calculateMonkeyCardDamage(mo);
+		calculateBBBlock(AbstractDungeon.player);
 		super.calculateCardDamage(mo);
 	}
 	

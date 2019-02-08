@@ -64,7 +64,7 @@ public class UltraBananaAttack extends CMCard {
 	public void calculateCardDamage(AbstractMonster mo) {
 		super.calculateCardDamage(mo);
 		this.BBBaseDamage = this.damage + this.burstCount * this.magicNumber;
-		calculateMonkeyCardDamage(mo);
+		calculateBBDamage(AbstractDungeon.player, mo);
 		
 		this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
 		initializeDescription();

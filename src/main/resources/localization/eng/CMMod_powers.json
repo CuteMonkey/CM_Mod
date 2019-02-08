@@ -2,7 +2,7 @@
 	"CM_BananaEssence": {
 		"NAME": "Banana Essence",
 		"DESCRIPTIONS": [
-			"The essence extracted from bananas, can excite the potential of monkeys."
+			"The essence extracted from bananas, can excite the potential of monkeys.\nConsume 5 points at end of battles."
 		]
 	},
 	"CM_BananaSapling": {

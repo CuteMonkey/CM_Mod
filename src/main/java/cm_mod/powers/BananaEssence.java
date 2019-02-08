@@ -7,10 +7,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+
+import cm_mod.CMMod;
 
 public class BananaEssence extends AbstractPower {
 	public static final String POWER_ID = "CM_BananaEssence";
@@ -20,6 +21,8 @@ public class BananaEssence extends AbstractPower {
 	public static final String DESCRIPTION = powerStrings.DESCRIPTIONS[0];
 	
 	private static final String IMG = "img/powers/banana_essence.png";
+	
+	private static final int REDUCE_AMT_AT_END = 5;
 	
 	public BananaEssence(AbstractCreature owner, int amount) {
 		this.ID = POWER_ID;
@@ -45,12 +48,11 @@ public class BananaEssence extends AbstractPower {
 	}
 	
 	@Override
-	public void onDeath() {
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-	}
-	
-	@Override
 	public void onVictory() {
-		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+		if(this.amount > REDUCE_AMT_AT_END) {
+			CMMod.nextStartingBE = this.amount - REDUCE_AMT_AT_END;
+		} else {
+			CMMod.nextStartingBE = 0;
+		}
 	}
 }

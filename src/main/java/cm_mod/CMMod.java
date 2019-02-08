@@ -64,6 +64,8 @@ public class CMMod implements EditStringsSubscriber, EditCardsSubscriber,
 	private static final String RELIC_STRINGS = "CMMod_relics.json";
 	private static final String KEYWORD_STRINGS = "CMMod_keywords.json";
 	
+	public static int nextStartingBE = 0;
+	
 	public CMMod() {
 		BaseMod.subscribe(this);
 		

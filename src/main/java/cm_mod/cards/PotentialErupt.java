@@ -52,9 +52,9 @@ public class PotentialErupt extends CMCard {
 			
 			for(int i = 0; i < BBDualLayer; i++) {
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(
-					p, 1), 1));
+					p, 1), 1, true));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(
-					p, 1), 1));
+					p, 1), 1, true));
 			}
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BananaGainSeal(
 				p, this.BCurse), this.BCurse));
